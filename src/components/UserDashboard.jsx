@@ -6,9 +6,7 @@ import Navbar1 from './Navbar1';
 import UserSidebar from './UserSidebar';
 import { Button, Form, Navbar, Card } from 'react-bootstrap';
 
-// Importing Font Awesome icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFolder } from '@fortawesome/free-solid-svg-icons';
+
 
 function UserDashboard() {
   const location = useLocation();
@@ -55,8 +53,7 @@ function UserDashboard() {
         </div>
         {/* Timesheet section */}
         <div className="timesheet-section">
-          <FontAwesomeIcon icon={faFolder} /> {/* First folder icon */}
-          <FontAwesomeIcon icon={faFolder} /> {/* Second folder icon */}
+          <h1>timesheet</h1>
         </div>
       </div>
     </>
