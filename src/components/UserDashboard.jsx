@@ -4,8 +4,11 @@ import axios from 'axios';
 import '../Dashboard/userdashboard.css';
 import Navbar1 from './Navbar1';
 import UserSidebar from './UserSidebar';
-
 import { Button, Form, Navbar, Card } from 'react-bootstrap';
+
+// Importing Font Awesome icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFolder } from '@fortawesome/free-solid-svg-icons';
 
 function UserDashboard() {
   const location = useLocation();
@@ -52,7 +55,8 @@ function UserDashboard() {
         </div>
         {/* Timesheet section */}
         <div className="timesheet-section">
-          {/* Your timesheet content goes here */}
+          <FontAwesomeIcon icon={faFolder} /> {/* First folder icon */}
+          <FontAwesomeIcon icon={faFolder} /> {/* Second folder icon */}
         </div>
       </div>
     </>
