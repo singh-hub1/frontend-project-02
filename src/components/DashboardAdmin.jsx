@@ -12,7 +12,7 @@ function DashboardAdmin() {
 
   const fetchAdminName = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/admin/profile');
+      const response = await axios.get('https://backend-project-02-1.onrender.com/admin/profile');
       console.log(response.data.name);
       setAdminName(response.data.name);
     } catch (error) {

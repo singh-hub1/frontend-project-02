@@ -19,7 +19,7 @@ function AllUsers() {
 
   const fetchUserProfiles = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/userProfiles');
+      const response = await axios.get('https://backend-project-02-1.onrender.com/userProfiles');
       setUserProfiles(response.data);
       console.log(response.data);
     } catch (error) {
@@ -29,7 +29,7 @@ function AllUsers() {
 
   const fetchAdminName = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/admin/profile');
+      const response = await axios.get('https://backend-project-02-1.onrender.com/admin/profile');
       console.log(response.data.name);
       setAdminName(response.data.name);
     } catch (error) {
@@ -46,7 +46,7 @@ function AllUsers() {
   const handleSave = async () => {
     try {
       const userId = editedUser.id; // Assuming id is already a number
-      await axios.put(`http://localhost:4000/userProfiles/${userId}`, editedUser);
+      await axios.put(`https://backend-project-02-1.onrender.com/userProfiles/${userId}`, editedUser);
       fetchUserProfiles();
       setEditedUser(null);
       setIsEditing(false);
@@ -58,7 +58,7 @@ function AllUsers() {
   const handleDelete = async (id) => {
     try {
       const userId = parseInt(id); // Convert id to integer
-      await axios.delete(`http://localhost:4000/userProfiles/${userId}`);
+      await axios.delete(`https://backend-project-02-1.onrender.com/userProfiles/${userId}`);
       fetchUserProfiles();
     } catch (error) {
       console.error('Error deleting user profile:', error);

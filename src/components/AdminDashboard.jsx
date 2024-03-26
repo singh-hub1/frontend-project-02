@@ -17,7 +17,7 @@ function AdminDashboard() {
 
   const fetchUserProfiles = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/leaveapplications');
+      const response = await axios.get('https://backend-project-02-1.onrender.com/leaveapplications');
       setUserProfiles(response.data);
     } catch (error) {
       console.error('Error fetching user profiles:', error);
@@ -26,7 +26,7 @@ function AdminDashboard() {
 
   // const fetchAdminName = async () => {
   //   try {
-  //     const response = await axios.get('http://localhost:4000/admin/profile');
+  //     const response = await axios.get('https://backend-project-02-1.onrender.com/admin/profile');
   //     setAdminName(response.data.name);
   //   } catch (error) {
   //     console.error('Error fetching admin name:', error);
@@ -36,7 +36,7 @@ function AdminDashboard() {
   const handleApproveReject = async (userId, action) => {
     try {
       const updatedStatus = action === 'approve' ? 'Approved' : 'Rejected';
-      await axios.put(`http://localhost:4000/leaveapplications/${userId}`, { status: updatedStatus });
+      await axios.put(`https://backend-project-02-1.onrender.com/leaveapplications/${userId}`, { status: updatedStatus });
       fetchUserProfiles();
     } catch (error) {
       console.error(`Error ${action} leave application with ID ${userId}:`, error);

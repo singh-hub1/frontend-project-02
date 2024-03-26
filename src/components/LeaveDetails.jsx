@@ -14,7 +14,7 @@ function LeaveForm() {
 
     const fetchUserStatus = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/user/status');
+            const response = await axios.get('https://backend-project-02-1.onrender.com/user/status');
             setUserStatus(response.data.status);
         } catch (error) {
             console.error('Error fetching user status:', error);
