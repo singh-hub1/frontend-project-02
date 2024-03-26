@@ -7,7 +7,7 @@ import UserSidebar from './UserSidebar';
 import { Button, Form, Navbar, Card } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFolder } from '@fortawesome/free-solid-svg-icons';
+import { faFolder, faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 function UserDashboard() {
   const location = useLocation();
@@ -57,17 +57,21 @@ function UserDashboard() {
 
           <div>
             <h3 style={{ textAlign: 'left' }}>Time in</h3>
+            {/* Timesheet section */}
             <div className="timesheet-section">
-          <FontAwesomeIcon icon={faFolder} size="3x" /> 
-        </div>
-            <h3 style={{ textAlign: 'left',marginLeft:"100px" }}>Time out</h3>
+              <FontAwesomeIcon icon={faFolder} size="3x" /> {/* Folder icon */}
+            </div>
+            <h3 style={{ textAlign: 'left' }}>Time out</h3>
             <div className="timesheet-section">
-          <FontAwesomeIcon icon={faFolder} size="3x" /> 
-        </div>
+              <FontAwesomeIcon icon={faFolder} size="3x" /> {/* Folder icon */}
+            </div>
+          </div>
+
+          {/* Calendar icon */}
+          <div style={{ marginTop: '20px' }}>
+            <FontAwesomeIcon icon={faCalendar} size="2x" /> {/* Calendar icon */}
           </div>
         </div>
-      
-        
       </div>
     </>
   );
