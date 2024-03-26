@@ -1,0 +1,72 @@
+.employee-login-01 {
+    padding: 10px;
+    height: 530px;
+    width: 500px;
+    background-color: skyblue;
+    margin-left: 950px;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+}
+
+.new-signup {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 300px;
+    text-align: center;
+}
+
+.form-input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+}
+
+.signup-btn {
+    padding: 10px 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+/* ------------------------------------------------------------Responsive--------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+.employee-login-01{
+   margin-left: 1px;
+    height: auto;
+    width:auto;
+    margin-top: 0px;
+   
+}
+
+.signup-btn{
+ 
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}  
+
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.new-signup-add{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 500px;
+    margin-top: 100px;
+}

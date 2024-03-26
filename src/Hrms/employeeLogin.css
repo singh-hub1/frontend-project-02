@@ -1,0 +1,105 @@
+.employee-dashboard {
+    background: url("/public/Images/Picture5.jfif");
+    background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("/public/Images/Picture5.jfif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 120%;
+    height: 100vh;
+}
+
+
+.employee-login {
+    padding: 10px;
+    height: 500px;
+    width: 500px;
+    background-color: skyblue;
+    margin-left: 950px;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+}
+
+.content {
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.logo {
+    width:fit-content;
+    height: 100px;
+}
+
+.Admin-btn {
+    width: 150px;
+    margin-right: 10px;
+}
+
+.User-btn {
+    width: 150px;
+}
+
+.paragraph-text {
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.Newuser-btn {
+    width: 200px;
+}
+
+
+
+/* -----------------------------------------------------------Responsive --------------------------------------------------- */
+@media (max-width: 767px) {
+
+    .employee-login {
+        padding: 0px;
+        text-align: center;
+        margin-left: 5px;
+        height: 420px;
+        width: 380px;
+        align-content: center;
+        margin-top: 50px;
+        
+    }
+
+    .employee-dashboard {
+        background: url("/public/Images/Picture5.jfif");
+        background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("/public/Images/Picture5.jfif");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        /* height: auto; */
+        
+    }
+    .content{
+        margin-top: 1px;
+    }
+    .paragraph-text{
+        text-align: center;
+        margin-top: 2px;
+    }
+    .Newuser-btn{
+        margin-top: 2px;
+    }
+
+    .logo{
+        align-items: left;
+        margin-left: 2px;
+        padding-left: 2px;
+        width:200px;
+    }
+
+
+    .Blitz-admin{
+        margin-left: 2px;
+        text-align: center;
+        
+    }
+}

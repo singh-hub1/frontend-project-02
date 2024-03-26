@@ -1,0 +1,78 @@
+.Accounts-dashboard {
+    background: url("/public/Images/Accounts-background.jfif");
+    background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("/public/Images/Accounts-background.jfif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 120%;
+    height: 100vh;
+}
+
+
+.employee-login {
+    padding: 10px;
+    height: 500px;
+    width: 500px;
+    background-color: skyblue;
+    margin-left: 950px;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+}
+
+.logo {
+    width:fit-content;
+    height: 100px;
+}
+
+.header-txt{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+
+}
+
+.Accounts-heading{
+ margin-left: 50px;
+ color: white;
+ font-size:150px;
+}
+/* -----------------------------------------------------------Responsive --------------------------------------------------- */
+@media (max-width: 767px) {
+
+    .employee-login {
+        padding: 0px;
+        text-align: center;
+        margin-left: 5px;
+        height: 420px;
+        width: 380px;
+        align-content: center;
+        margin-top: 50px;
+        
+    }
+
+    .Accounts-dashboard {
+        background: url("/public/Images/Accounts-background.jfif");
+        background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("/public/Images/Accounts-background.jfif");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        /* height: auto; */
+        
+    }
+  
+    .logo{
+        align-items: left;
+        margin-left: 2px;
+        padding-left: 2px;
+        width:200px;
+    }
+
+    .Accounts-heading{
+        font-size: 60px;
+    }
+
+
+}

@@ -1,0 +1,27 @@
+.user-information-title {
+    color: cadetblue;
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.user-dashboard-table {
+    margin-top: 40px;
+    border: 6px solid yellowgreen;
+}
+
+
+.user-dashboard {
+    display: flex;
+  }
+  
+  .sidebar {
+   
+  }
+  
+  .main-content {
+    /* Add appropriate styles for the main content */
+    flex-grow: 1; /* This will make the main content fill the remaining space */
+  }
+  

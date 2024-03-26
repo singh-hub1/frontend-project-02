@@ -1,0 +1,35 @@
+.header-txt{
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+ 
+}
+
+.heading{
+     margin-left: 150px;
+     color: white;
+}
+
+.sub-heading{
+color: white;
+}
+
+
+@media (max-width: 767px) {
+    .heading {
+        margin-top: 20px;
+        font-size: 50px;
+       
+    }
+
+    .sub-heading {
+        margin-top: 15px;
+        /* padding-left: 1px; */
+        font-size: 10px;
+        margin-left: 1px;
+        margin-right: 20px;
+       
+    }
+}

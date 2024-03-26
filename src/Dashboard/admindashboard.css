@@ -1,0 +1,72 @@
+/* admindashboard.css */
+
+.admin-dashboard {
+  display: flex;
+  /* border: 2px solid red; */
+  background-color:antiquewhite;
+  margin-top: 0px;
+}
+
+.main-content {
+/* border: 2px solid red; */
+padding: 50px;
+/* border:  2px solid green; */
+height: auto;
+
+
+}
+
+/* .table {
+  width: 100%;
+} */
+
+.sidebar {
+
+  padding: 20px;
+}
+
+/* Media query to adjust layout for smaller screens */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+  }
+}
+
+
+/* //--------------------------------------------------------------------- */
+
+
+
+/* admindashboard.css */
+
+.card {
+  width: 20rem; /* Increase the width of the cards */
+  height: 15rem; /* Increase the height of the cards */
+  margin-bottom: 20px; /* Add margin at the bottom to create space between cards and table */
+  box-sizing:content-box;
+  border-radius: 11px;
+}
+
+.table {
+  margin-top: 20px; /* Add margin at the top of the table to create space between cards and table */
+}
+
+.logo{
+  height:40px;
+width: 120px;
+/* border: 2px solid yellow; */
+
+}
+
+.leave-applications {
+  margin: 0 auto; /* This will center the table horizontally */
+  width: 80%; /* Adjust the width as needed */
+}
+
+.leave-applications h2 {
+  text-align: center;
+}
