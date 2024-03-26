@@ -55,15 +55,19 @@ function UserDashboard() {
             </div>
           </div>
 
-          <div style={{ textAlign: 'center' }}>
-            <h3>Time in</h3>
-            <h3>Time out</h3>
+          <div>
+            <h3 style={{ textAlign: 'left' }}>Time in</h3>
+            <div className="timesheet-section">
+          <FontAwesomeIcon icon={faFolder} size="3x" /> 
+        </div>
+            <h3 style={{ textAlign: 'center' }}>Time out</h3>
+            <div className="timesheet-section">
+          <FontAwesomeIcon icon={faFolder} size="3x" /> 
+        </div>
           </div>
         </div>
       
-        <div className="timesheet-section">
-          <FontAwesomeIcon icon={faFolder} size="3x" /> 
-        </div>
+        
       </div>
     </>
   );
