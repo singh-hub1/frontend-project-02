@@ -54,7 +54,7 @@ function UserDashboard() {
               </Card>
             </div>
 
-            <div className="col-sm-2"  style={{ marginLeft: '320px' }}>
+            <div className="col-sm-2"  style={{ marginLeft: '120px' }}>
               <Card style={{ width: '12rem', backgroundColor: 'grey' }}>
                 <Card.Body>
                   <FontAwesomeIcon icon={faFolder} size="2x" /> {/* Folder icon */}
@@ -65,10 +65,26 @@ function UserDashboard() {
                 </Card.Body>
               </Card>
             </div>
-            {/* Calendar card with left margin */}
-            {/* Calendar card with left margin */}
-            <div className="col-sm-8" style={{ marginLeft: '820px' }}>
-              <Card style={{ backgroundColor: 'lightpink' }}>
+
+
+          {/* Time in and Time out sections */}
+          <div className="row">
+            <div className="col-sm-4">
+              <h3 style={{ textAlign: 'left' }}>Time in</h3>
+              <div className="timesheet-section">
+                <FontAwesomeIcon icon={faFolder} size="3x" /> {/* Folder icon */}
+              </div>
+            </div>
+            <div className="col-sm-4">
+              <h3 style={{ textAlign: 'left' }}>Time out</h3>
+              <div className="timesheet-section">
+                <FontAwesomeIcon icon={faFolder} size="3x" /> {/* Folder icon */}
+              </div>
+            </div>
+          </div>
+            
+            <div className="col-sm-4" style={{ marginLeft: '720px',marginTop:'20px' }}>
+              <Card style={{  border: '2px solid red',backgroundColor: 'lightpink' }}>
                 <Card.Body>
                   {/* <FontAwesomeIcon icon={faCalendar} size="2x" /> Calendar icon */}
                   {/* <Card.Title>Calendar</Card.Title> */}
@@ -80,20 +96,11 @@ function UserDashboard() {
             </div>
           </div>
 
-          <div className="row">
-            <div className="col-sm-6">
-              <h3 style={{ textAlign: 'left' }}>Time in</h3>
-              <div className="timesheet-section">
-                <FontAwesomeIcon icon={faFolder} size="3x" /> {/* Folder icon */}
-              </div>
-            </div>
-            <div className="col-sm-6">
-              <h3 style={{ textAlign: 'left' }}>Time out</h3>
-              <div className="timesheet-section">
-                <FontAwesomeIcon icon={faFolder} size="3x" /> {/* Folder icon */}
-              </div>
-            </div>
-          </div>
+
+
+
+
+
 
         </div>
       </div>

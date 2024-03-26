@@ -49,6 +49,16 @@ function Login() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+
+
+  const handleSuccessfulLogin = (user) => {
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('valid', true);
+    navigate('/UserDashboard', { state: { user } });
+  };
+
+
+  
   const handleSubmit = async (e) => {
 
     e.preventDefault();
@@ -60,7 +70,8 @@ function Login() {
       if (response.data.success) {         
             localStorage.setItem('user', JSON.stringify(response.data.user));
             console.log(response.data.user);
-            navigate("/UserDashboard", { state: { user: response.data.user } }); 
+            handleSuccessfulLogin(response.data.user);
+            // navigate("/UserDashboard", { state: { user: response.data.user } }); 
             // navigate("/UserDashboard");
         }
            else {
