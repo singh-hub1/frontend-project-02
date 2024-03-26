@@ -32,6 +32,7 @@ function LeaveForm() {
                         <Card.Title>{userStatus}</Card.Title>
                         <Card.Text>
                             {/* Add leave details here */}
+                            <h3>Pending...</h3>
                         </Card.Text>
                     </Card.Body>
                 </Card>
