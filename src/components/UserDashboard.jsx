@@ -54,6 +54,9 @@ function UserDashboard() {
               </Card>
             </div>
           </div>
+
+          <h3>Time in</h3>
+          <h3>Time out</h3>
         </div>
         {/* Timesheet section */}
         <div className="timesheet-section">
