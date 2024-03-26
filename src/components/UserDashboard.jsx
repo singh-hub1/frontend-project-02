@@ -60,7 +60,7 @@ function UserDashboard() {
             <div className="timesheet-section">
           <FontAwesomeIcon icon={faFolder} size="3x" /> 
         </div>
-            <h3 style={{ textAlign: 'center' }}>Time out</h3>
+            <h3 style={{ textAlign: 'left',marginLeft:"100px" }}>Time out</h3>
             <div className="timesheet-section">
           <FontAwesomeIcon icon={faFolder} size="3x" /> 
         </div>
