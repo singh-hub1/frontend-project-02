@@ -23,7 +23,7 @@ function UserDashboard() {
             <div className="col-sm-4">
               <Card style={{ width: '18rem', backgroundColor: 'lightblue' }}>
                 <Card.Body>
-                  <FontAwesomeIcon icon={faFolder} /> {/* Folder icon */}
+                  <FontAwesomeIcon icon={faFolder} size="2x" /> {/* Folder icon */}
                   <Card.Title>Leave balance</Card.Title>
                   <Card.Text>
                     <h1>20</h1>
@@ -34,7 +34,7 @@ function UserDashboard() {
             <div className="col-sm-4">
               <Card style={{ width: '18rem', backgroundColor: 'lightgreen' }}>
                 <Card.Body>
-                  <FontAwesomeIcon icon={faFolder} /> {/* Folder icon */}
+                  <FontAwesomeIcon icon={faFolder} size="2x" /> {/* Folder icon */}
                   <Card.Title>Personal leave</Card.Title>
                   <Card.Text>
                     <h1>18</h1>
@@ -45,7 +45,7 @@ function UserDashboard() {
             <div className="col-sm-4">
               <Card style={{ width: '18rem', backgroundColor: 'lightcoral' }}>
                 <Card.Body>
-                  <FontAwesomeIcon icon={faFolder} /> {/* Folder icon */}
+                  <FontAwesomeIcon icon={faFolder} size="2x" /> {/* Folder icon */}
                   <Card.Title>Sick leave</Card.Title>
                   <Card.Text>
                     <h1>2</h1>
@@ -55,12 +55,14 @@ function UserDashboard() {
             </div>
           </div>
 
-          <h3>Time in</h3>
-          <h3>Time out</h3>
+          <div style={{ textAlign: 'center' }}>
+            <h3>Time in</h3>
+            <h3>Time out</h3>
+          </div>
         </div>
-        {/* Timesheet section */}
+      
         <div className="timesheet-section">
-          {/* Optional: You can add more folder icons here if needed */}
+          <FontAwesomeIcon icon={faFolder} size="3x" /> 
         </div>
       </div>
     </>
