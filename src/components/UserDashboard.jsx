@@ -6,6 +6,8 @@ import Navbar1 from './Navbar1';
 import UserSidebar from './UserSidebar';
 import { Button, Form, Navbar, Card } from 'react-bootstrap';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFolder } from '@fortawesome/free-solid-svg-icons';
 
 
 function UserDashboard() {
@@ -53,7 +55,8 @@ function UserDashboard() {
         </div>
         {/* Timesheet section */}
         <div className="timesheet-section">
-          <h1>timesheet</h1>
+          <FontAwesomeIcon icon={faFolder} /> {/* First folder icon */}
+          <FontAwesomeIcon icon={faFolder} /> {/* Second folder icon */}
         </div>
       </div>
     </>
