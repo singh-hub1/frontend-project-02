@@ -7,18 +7,14 @@ import UserSidebar from './UserSidebar';
 
 import { Button, Form, Navbar, Card } from 'react-bootstrap';
 
-
 function UserDashboard() {
   const location = useLocation();
-
- 
-
 
   return (
     <>
       <Navbar1 />
       <div className="user-dashboard">
-        <UserSidebar  />
+        <UserSidebar />
         <div className="container">
           <h2 className="user-information-title">User Information</h2>
           <div className="card-container row">
@@ -53,6 +49,10 @@ function UserDashboard() {
               </Card>
             </div>
           </div>
+        </div>
+        {/* Timesheet section */}
+        <div className="timesheet-section">
+          {/* Your timesheet content goes here */}
         </div>
       </div>
     </>
