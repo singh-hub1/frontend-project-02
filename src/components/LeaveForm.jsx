@@ -47,12 +47,12 @@ function LeaveForm() {
             setStartDate("");
             setEndDate("");
             setReason("");
-            setShowAlert(true); 
+            setShowAlert(true);
             setTimeout(() => {
-                setShowAlert(false); 
+                setShowAlert(false);
                 navigate("/UserDashboard/LeaveDetails"); // Navigate to the desired route
             }, 3000);
-           
+
         } catch (error) {
             console.error('Error submitting leave application:', error);
         }
@@ -118,9 +118,10 @@ function LeaveForm() {
                                 required
                             />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type="submit" style={{ marginTop: '30px' }}>
                             Submit
                         </Button>
+
                     </Form>
                     {/* Alert component to show form submission success */}
                     <Alert variant="success" show={showAlert}>
