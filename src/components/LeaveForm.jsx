@@ -47,11 +47,12 @@ function LeaveForm() {
             setStartDate("");
             setEndDate("");
             setReason("");
-            setShowAlert(true); // Show alert after form submission
+            setShowAlert(true); 
             setTimeout(() => {
-                setShowAlert(false); // Hide alert after 3 seconds
+                setShowAlert(false); 
+                navigate("/UserDashboard/LeaveDetails"); // Navigate to the desired route
             }, 3000);
-            navigate("/UserDashboard/LeaveForm");
+           
         } catch (error) {
             console.error('Error submitting leave application:', error);
         }
