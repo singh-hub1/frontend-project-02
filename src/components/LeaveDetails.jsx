@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Button } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import Navbar1 from './Navbar1';
 import UserSidebar from './UserSidebar';
@@ -7,21 +7,15 @@ import axios from 'axios';
 
 function LeaveForm() {
     const [userStatus, setUserStatus] = useState(null);
-
-    useEffect(() => {
-        fetchUserStatus();
-    }, []);
-
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-     
-      const storedUser = localStorage.getItem('user');
-      if (storedUser) {
-        setUser(JSON.parse(storedUser));
-      }
+        fetchUserStatus();
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
     }, []);
-
 
     const fetchUserStatus = async () => {
         try {
@@ -37,16 +31,38 @@ function LeaveForm() {
             <Navbar1 />
             <div className="user-dashboard">
                 <UserSidebar user={user} />
-                <h1>User Leave Details</h1>
-                <Card className="mt-3" bg="warning" text="dark">
-                    <Card.Body>
-                        <Card.Title>{userStatus}</Card.Title>
-                        <Card.Text>
-                            {/* Add leave details here */}
-                            <h3>Pending...</h3>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
+                {/* <h1>User Leave Details</h1> */}
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Column 1</th>
+                            <th>Column 2</th>
+                            <th>Column 3</th>
+                            <th>Column 4</th>
+                            <th>Column 5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Row 1, Column 1</td>
+                            <td>Row 1, Column 2</td>
+                            <td>Row 1, Column 3</td>
+                            <td>Row 1, Column 4</td>
+                            <td>Row 1, Column 5</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Row 2, Column 1</td>
+                            <td>Row 2, Column 2</td>
+                            <td>Row 2, Column 3</td>
+                            <td>Row 2, Column 4</td>
+                            <td>Row 2, Column 5</td>
+                        </tr>
+                        {/* Add more rows as needed */}
+                    </tbody>
+                </Table>
             </div>
         </>
     );
