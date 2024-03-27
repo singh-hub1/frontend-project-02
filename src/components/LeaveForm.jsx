@@ -40,12 +40,13 @@ function LeaveForm() {
                 reason
             };
 
+            console.log(leaveRequest);
 
             await axios.post('https://backend-project-02-1.onrender.com/leave-applications', leaveRequest);
 
 
 
-            setName("");
+            // setName("");
             setLeaveType("");
             setEmpCode("");
             setStartDate("");
@@ -53,11 +54,11 @@ function LeaveForm() {
             setDaysOfLeave("");
             setreason("");
 
-            // Redirect to admin dashboard after successful submission
+        
             navigate("/UserDashboard/LeaveForm");
         } catch (error) {
             console.error('Error submitting leave application:', error);
-            // Handle error as per your requirement (e.g., display an error message)
+
         }
     };
 
@@ -67,7 +68,7 @@ function LeaveForm() {
     useEffect(() => {
 
         const storedUser = localStorage.getItem('user');
-        //   console.log(storedUser);
+        
         if (storedUser) {
             setUser(JSON.parse(storedUser));
         }
