@@ -11,12 +11,21 @@ import { faFolder, faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 function UserDashboard() {
   const location = useLocation();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+   
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   return (
     <>
       <Navbar1 />
       <div className="user-dashboard">
-        <UserSidebar />
+        <UserSidebar user={user} />
         <div className="container">
 
           <h2 className="user-information-title">User Information</h2>
@@ -73,14 +82,14 @@ function UserDashboard() {
               <div className="col-sm-4">
                 <h3 style={{ textAlign: 'left' }}>Time in</h3>
                 <div className="timesheet-section">
-                  <FontAwesomeIcon icon={faFolder} size="3x" /> {/* Folder icon */}
+                  <FontAwesomeIcon icon={faFolder} size="3x" /> 
                 </div>
               </div>
 
               <div className="col-sm-4">
                 <h3 style={{ textAlign: 'left' }}>Time out</h3>
                 <div className="timesheet-section">
-                  <FontAwesomeIcon icon={faFolder} size="3x" /> {/* Folder icon */}
+                  <FontAwesomeIcon icon={faFolder} size="3x" /> 
                 </div>
               </div>
             </div>

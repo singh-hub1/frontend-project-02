@@ -1,6 +1,6 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Button } from 'react-bootstrap';
-import { useNavigate,useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Navbar1 from './Navbar1';
 import UserSidebar from './UserSidebar';
 import axios from 'axios';
@@ -17,25 +17,19 @@ function LeaveForm() {
     const navigate = useNavigate();
 
 
-    useEffect(() => {
-        if (location.state && location.state.user) {
-            setName(location.state.user.name); // Autofill name field with user's name
-        }
-    }, [location.state]);
+
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // You can perform form validation here before submitting
 
-         // Calculate days of leave
-         const start = new Date(startDate);
-         const end = new Date(endDate);
-         const diffTime = Math.abs(end - start);
-         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+        const diffTime = Math.abs(end - start);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
         try {
-            // Create a leave request object
+
             const leaveRequest = {
                 name,
                 leaveType,
@@ -46,18 +40,18 @@ function LeaveForm() {
                 reason
             };
 
-            // Send the leave request data to the server
+
             await axios.post('https://backend-project-02-1.onrender.com/leave-applications', leaveRequest);
 
 
-                 // Reset form fields after successful submission
-        setName("");
-        setLeaveType("");
-        setEmpCode("");
-        setStartDate("");
-        setEndDate("");
-        setDaysOfLeave("");
-        setreason("");
+
+            setName("");
+            setLeaveType("");
+            setEmpCode("");
+            setStartDate("");
+            setEndDate("");
+            setDaysOfLeave("");
+            setreason("");
 
             // Redirect to admin dashboard after successful submission
             navigate("/UserDashboard/LeaveForm");
@@ -67,24 +61,41 @@ function LeaveForm() {
         }
     };
 
+
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+
+        const storedUser = localStorage.getItem('user');
+        //   console.log(storedUser);
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
+
+
     return (
         <>
             <Navbar1 />
             <div style={{ display: 'flex' }}>
-                <UserSidebar />
+                <UserSidebar user={user} />
 
 
                 <div style={{ width: '100%', maxWidth: '600px', margin: '20px auto' }}>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="name">
                             <Form.Label>Name:</Form.Label>
+
+
                             <Form.Control
                                 type="text"
-                                value={name}
+                                value={user ? user.name : ''}
                                 onChange={(e) => setName(e.target.value)}
                                 required
-                                // disabled
+                                disabled
                             />
+
+
                         </Form.Group>
 
                         <Form.Group controlId="leaveType">
@@ -127,7 +138,7 @@ function LeaveForm() {
                             />
                         </Form.Group>
 
-                    
+
 
                         <Form.Group controlId="reason">
                             <Form.Label>Reason:</Form.Label>

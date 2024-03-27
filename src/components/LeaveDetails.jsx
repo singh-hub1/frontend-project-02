@@ -12,6 +12,17 @@ function LeaveForm() {
         fetchUserStatus();
     }, []);
 
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+     
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        setUser(JSON.parse(storedUser));
+      }
+    }, []);
+
+
     const fetchUserStatus = async () => {
         try {
             const response = await axios.get('https://backend-project-02-1.onrender.com/user/status');
@@ -25,7 +36,7 @@ function LeaveForm() {
         <>
             <Navbar1 />
             <div className="user-dashboard">
-                <UserSidebar />
+                <UserSidebar user={user} />
                 <h1>User Leave Details</h1>
                 <Card className="mt-3" bg="warning" text="dark">
                     <Card.Body>
