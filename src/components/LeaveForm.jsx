@@ -4,34 +4,34 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Navbar1 from './Navbar1';
 import UserSidebar from './UserSidebar';
 import axios from 'axios';
+
 function LeaveForm() {
-    const [name, setName] = useState("");
     const [leaveType, setLeaveType] = useState("");
     const [empCode, setEmpCode] = useState("");
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
-    const [daysOfLeave, setDaysOfLeave] = useState("");
-    const [reason, setreason] = useState("");
+    const [reason, setReason] = useState("");
     const location = useLocation();
-
     const navigate = useNavigate();
 
+    const [user, setUser] = useState(null);
 
-
-
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         const start = new Date(startDate);
         const end = new Date(endDate);
         const diffTime = Math.abs(end - start);
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
         try {
-
             const leaveRequest = {
-                name,
+                name: user ? user.name : '',
                 leaveType,
                 empCode,
                 startDate,
@@ -39,66 +39,34 @@ function LeaveForm() {
                 daysOfLeave: diffDays,
                 reason
             };
-
             console.log(leaveRequest);
-
             await axios.post('https://backend-project-02-1.onrender.com/leave-applications', leaveRequest);
-
-
-
-            // setName("");
             setLeaveType("");
             setEmpCode("");
             setStartDate("");
             setEndDate("");
-            setDaysOfLeave("");
-            setreason("");
-
-        
+            setReason("");
             navigate("/UserDashboard/LeaveForm");
         } catch (error) {
             console.error('Error submitting leave application:', error);
-
         }
     };
-
-
-    const [user, setUser] = useState(null);
-
-    useEffect(() => {
-
-        const storedUser = localStorage.getItem('user');
-        
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
-        }
-    }, []);
-
 
     return (
         <>
             <Navbar1 />
             <div style={{ display: 'flex' }}>
                 <UserSidebar user={user} />
-
-
                 <div style={{ width: '100%', maxWidth: '600px', margin: '20px auto' }}>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="name">
                             <Form.Label>Name:</Form.Label>
-
-
                             <Form.Control
                                 type="text"
                                 value={user ? user.name : ''}
-                                onChange={(e) => setName(e.target.value)}
-                                required
-                                disabled
+                                readOnly
                             />
-
-
                         </Form.Group>
-
                         <Form.Group controlId="leaveType">
                             <Form.Label>Leave Type:</Form.Label>
                             <Form.Control
@@ -108,7 +76,6 @@ function LeaveForm() {
                                 required
                             />
                         </Form.Group>
-
                         <Form.Group controlId="empCode">
                             <Form.Label>Emp Code:</Form.Label>
                             <Form.Control
@@ -118,7 +85,6 @@ function LeaveForm() {
                                 required
                             />
                         </Form.Group>
-
                         <Form.Group controlId="startDate">
                             <Form.Label>Start Date:</Form.Label>
                             <Form.Control
@@ -128,7 +94,6 @@ function LeaveForm() {
                                 required
                             />
                         </Form.Group>
-
                         <Form.Group controlId="endDate">
                             <Form.Label>End Date:</Form.Label>
                             <Form.Control
@@ -138,31 +103,20 @@ function LeaveForm() {
                                 required
                             />
                         </Form.Group>
-
-
-
                         <Form.Group controlId="reason">
                             <Form.Label>Reason:</Form.Label>
                             <Form.Control
                                 type="text"
                                 value={reason}
-                                onChange={(e) => setreason(e.target.value)}
+                                onChange={(e) => setReason(e.target.value)}
                                 required
                             />
                         </Form.Group>
-
                         <Button variant="primary" type="submit">
                             Submit
                         </Button>
                     </Form>
                 </div>
-
-
-
-
-
-
-
             </div>
         </>
     );
