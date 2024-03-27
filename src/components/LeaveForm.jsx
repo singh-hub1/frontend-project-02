@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Alert } from 'react-bootstrap';
 import { useNavigate, useLocation } from "react-router-dom";
 import Navbar1 from './Navbar1';
 import UserSidebar from './UserSidebar';
@@ -11,6 +11,7 @@ function LeaveForm() {
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const [reason, setReason] = useState("");
+    const [showAlert, setShowAlert] = useState(false); // State for showing alert
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -46,6 +47,10 @@ function LeaveForm() {
             setStartDate("");
             setEndDate("");
             setReason("");
+            setShowAlert(true); // Show alert after form submission
+            setTimeout(() => {
+                setShowAlert(false); // Hide alert after 3 seconds
+            }, 3000);
             navigate("/UserDashboard/LeaveForm");
         } catch (error) {
             console.error('Error submitting leave application:', error);
@@ -116,6 +121,10 @@ function LeaveForm() {
                             Submit
                         </Button>
                     </Form>
+                    {/* Alert component to show form submission success */}
+                    <Alert variant="success" show={showAlert}>
+                        Form submitted successfully!
+                    </Alert>
                 </div>
             </div>
         </>
