@@ -28,14 +28,14 @@ function UserDashboard() {
         <UserSidebar user={user} />
         <div className="container">
 
-          <h2 className="user-information-title">User Information</h2>
+          <h2 className="user-information-title">User-Information</h2>
 
           <div className="card-container row">
 
             <div className="col-sm-2">
               <Card style={{ width: '12rem', backgroundColor: 'lightblue' }}>
                 <Card.Body>
-                  <FontAwesomeIcon icon={faFolder} size="2x" /> {/* Folder icon */}
+                  <FontAwesomeIcon icon={faFolder} size="2x" /> 
                   <Card.Title>Leave balance</Card.Title>
                   <Card.Text>
                     <h1>20</h1>
