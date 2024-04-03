@@ -155,7 +155,6 @@ const DashboardAdmin = () => {
 
 
 
-
           <div class="dashboard-card-2">
             <h2>Pending Leaves</h2>
             <table>
@@ -191,6 +190,7 @@ const DashboardAdmin = () => {
 
 
 
+{/* 
           <div class="dashboard-card-2">
             <h2 className='text-center'>Approved Leaves</h2>
             <table>
@@ -259,7 +259,7 @@ const DashboardAdmin = () => {
 
             </table>
 
-          </div>
+          </div> */}
         </div>
       </div>
 
