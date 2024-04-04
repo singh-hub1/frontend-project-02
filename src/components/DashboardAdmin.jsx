@@ -61,6 +61,7 @@ const DashboardAdmin = () => {
             </div>
           </div>
 
+
           <div className="dashboard-card">
             <h1 className='main'>9:30 AM</h1>
             <span className='main-1'>Average in time of team</span>
@@ -79,195 +80,214 @@ const DashboardAdmin = () => {
           </div>
 
 
+          {/* <div className='dashboard-cards-2'> */}
+        <div class="dashboard-card-2">
+          <h2>Leaves Tracking</h2>
 
-
-          <div class="dashboard-card-2">
-            <h2>Leaves Tracking</h2>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Status</th>
-                  <th>Start Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-name="Name">Tanya</td>
-                  <td data-name="Position">Technical Officer</td>
-                  <td data-name="Office">Gurgaon</td>
-                  <td data-name="Age">66</td>
-                  <td class="status"><span class="pending">Pending</span></td>
-                  <td data-name="Joining Date">2009/01/02</td>
-                </tr>
-                <tr>
-                  <td data-name="Name">Deepak</td>
-                  <td data-name="Position">Regional Marketing</td>
-                  <td data-name="Office">New Delhi</td>
-                  <td data-name="Age">27</td>
-                  <td class="status"><span class="pending">Pending</span></td>
-                  <td data-name="Joining Date">2011/03/17</td>
-                </tr>
-                <tr>
-                  <td data-name="Name">Ankit</td>
-                  <td data-name="Position">Sales Support</td>
-                  <td data-name="Office">Chennai</td>
-                  <td data-name="Age">45</td>
-                  <td class="status"><span class="approved">Approved</span></td>
-                  <td data-name="Joining Date">2011/12/12</td>
-                </tr>
-                <tr>
-                  <td data-name="Name">Naveen</td>
-                  <td data-name="Position">System Admin</td>
-                  <td data-name="Office">Hyderabad</td>
-                  <td data-name="Age">33</td>
-                  <td class="status"><span class="approved">Approved</span></td>
-                  <td data-name="Joining Date">2009/02/27</td>
-                </tr>
-
-
-
-                <tr>
-                  <td data-name="Name">Arti</td>
-                  <td data-name="Position">Support Assistant</td>
-                  <td data-name="Office">Pune</td>
-                  <td data-name="Age">24</td>
-                  <td class="status"><span class="decline">Decline</span></td>
-                  <td data-name="Joining Date">2008/12/13</td>
-                </tr>
-                <tr>
-                  <td data-name="Name">Aditi</td>
-                  <td data-name="Position">Team Leader</td>
-                  <td data-name="Office">Noida</td>
-                  <td data-name="Age">55</td>
-                  <td class="status"><span class="decline">Decline</span></td>
-                  <td data-name="Joining Date">2010/09/20</td>
-                </tr>
-              </tbody>
-            </table>
-
-
-          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Status</th>
+                <th>Start Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-name="Name">Tanya</td>
+                <td data-name="Position">Technical Officer</td>
+                <td data-name="Office">Gurgaon</td>
+                <td data-name="Age">66</td>
+                <td class="status"><span class="pending">Pending</span></td>
+                <td data-name="Joining Date">2009/01/02</td>
+              </tr>
+              <tr>
+                <td data-name="Name">Deepak</td>
+                <td data-name="Position">Regional Marketing</td>
+                <td data-name="Office">New Delhi</td>
+                <td data-name="Age">27</td>
+                <td class="status"><span class="pending">Pending</span></td>
+                <td data-name="Joining Date">2011/03/17</td>
+              </tr>
+              <tr>
+                <td data-name="Name">Ankit</td>
+                <td data-name="Position">Sales Support</td>
+                <td data-name="Office">Chennai</td>
+                <td data-name="Age">45</td>
+                <td class="status"><span class="approved">Approved</span></td>
+                <td data-name="Joining Date">2011/12/12</td>
+              </tr>
+              <tr>
+                <td data-name="Name">Naveen</td>
+                <td data-name="Position">System Admin</td>
+                <td data-name="Office">Hyderabad</td>
+                <td data-name="Age">33</td>
+                <td class="status"><span class="approved">Approved</span></td>
+                <td data-name="Joining Date">2009/02/27</td>
+              </tr>
 
 
 
-          <div class="dashboard-card-2">
-            <h2>Pending Leaves</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Status</th>
-                  <th>Start Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-name="Name">Tanya</td>
-                  <td data-name="Position">Technical Officer</td>
-
-                  <td class="status"><span class="pending">Pending</span></td>
-                  <td data-name="Joining Date">2009/01/02</td>
-                </tr>
-                <tr>
-                  <td data-name="Name">Deepak</td>
-                  <td data-name="Position">Regional Marketing</td>
-
-                  <td class="status"><span class="pending">Pending</span></td>
-                  <td data-name="Joining Date">2011/03/17</td>
-                </tr>
-
-              </tbody>
-            </table>
-
-
-          </div>
-
-
-
-{/* 
-          <div class="dashboard-card-2">
-            <h2 className='text-center'>Approved Leaves</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Status</th>
-                  <th>Start Date</th>
-                </tr>
-              </thead>
-              <tbody>
-
-
-                <tr>
-                  <td data-name="Name">Ankit</td>
-                  <td data-name="Position">Sales Support</td>
-
-                  <td class="status"><span class="approved">Approved</span></td>
-                  <td data-name="Joining Date">2011/12/12</td>
-                </tr>
-                <tr>
-                  <td data-name="Name">Naveen</td>
-                  <td data-name="Position">System Admin</td>
-
-                  <td class="status"><span class="approved">Approved</span></td>
-                  <td data-name="Joining Date">2009/02/27</td>
-                </tr>
-
-
-
-
-              </tbody>
-            </table>
-
-
-
-            <h2 className='mt-5 mb-5'>Declined Leaves</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Status</th>
-                  <th>Start Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-name="Name">Arti</td>
-                  <td data-name="Position">Support Assistant</td>
-
-                  <td class="status"><span class="decline">Decline</span></td>
-                  <td data-name="Joining Date">2008/12/13</td>
-                </tr>
-
-                <tr>
-                  <td data-name="Name">Aditi</td>
-                  <td data-name="Position">Team Leader</td>
-
-                  <td class="status"><span class="decline">Decline</span></td>
-                  <td data-name="Joining Date">2010/09/20</td>
-                </tr>
-
-              </tbody>
-
-            </table>
-
-          </div> */}
+              <tr>
+                <td data-name="Name">Arti</td>
+                <td data-name="Position">Support Assistant</td>
+                <td data-name="Office">Pune</td>
+                <td data-name="Age">24</td>
+                <td class="status"><span class="decline">Decline</span></td>
+                <td data-name="Joining Date">2008/12/13</td>
+              </tr>
+              <tr>
+                <td data-name="Name">Aditi</td>
+                <td data-name="Position">Team Leader</td>
+                <td data-name="Office">Noida</td>
+                <td data-name="Age">55</td>
+                <td class="status"><span class="decline">Decline</span></td>
+                <td data-name="Joining Date">2010/09/20</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="dashboard-card-2">
+          <h2>Pending Leaves</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Status</th>
+                <th>Start Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-name="Name">Tanya</td>
+                <td data-name="Position">Technical Officer</td>
+
+                <td class="status"><span class="pending">Pending</span></td>
+                <td data-name="Joining Date">2009/01/02</td>
+              </tr>
+              <tr>
+                <td data-name="Name">Deepak</td>
+                <td data-name="Position">Regional Marketing</td>
+
+                <td class="status"><span class="pending">Pending</span></td>
+                <td data-name="Joining Date">2011/03/17</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="dashboard-card-2">
+          <h2 className='text-center'>Approved Leaves</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Status</th>
+                <th>Start Date</th>
+              </tr>
+            </thead>
+            <tbody>
+
+
+              <tr>
+                <td data-name="Name">Ankit</td>
+                <td data-name="Position">Sales Support</td>
+
+                <td class="status"><span class="approved">Approved</span></td>
+                <td data-name="Joining Date">2011/12/12</td>
+              </tr>
+              <tr>
+                <td data-name="Name">Naveen</td>
+                <td data-name="Position">System Admin</td>
+
+                <td class="status"><span class="approved">Approved</span></td>
+                <td data-name="Joining Date">2009/02/27</td>
+              </tr>
+
+
+
+
+            </tbody>
+          </table>
+
+
+
+          <h2 className='mt-5 mb-5'>Declined Leaves</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Status</th>
+                <th>Start Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-name="Name">Arti</td>
+                <td data-name="Position">Support Assistant</td>
+
+                <td class="status"><span class="decline">Decline</span></td>
+                <td data-name="Joining Date">2008/12/13</td>
+              </tr>
+
+              <tr>
+                <td data-name="Name">Aditi</td>
+                <td data-name="Position">Team Leader</td>
+
+                <td class="status"><span class="decline">Decline</span></td>
+                <td data-name="Joining Date">2010/09/20</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+
+
+      {/* </div> */}
+
+
+
+
+
+
+        </div>
+           {/* //dashboard-cards */}
+
       </div>
 
 
 
-
-
-    
 
 
     </>
