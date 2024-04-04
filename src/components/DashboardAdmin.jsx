@@ -63,19 +63,19 @@ const DashboardAdmin = () => {
 
 
           <div className="dashboard-card">
-            <h1 className='main'>9:30 AM</h1>
+            <h1 className='main-2'>9:30 AM</h1>
             <span className='main-1'>Average in time of team</span>
           </div>
           <div className="dashboard-card">
-            <h1 className='main'>37m</h1>
+            <h1 className='main-2'>37m</h1>
             <span className='main-1'>Teams Average Break time</span>
           </div>
           <div className="dashboard-card">
-            <h1 className='main'>5h 45m</h1>
+            <h1 className='main-2'>5h 45m</h1>
             <span className='main-1'>Team Average work time</span>
           </div>
           <div className="dashboard-card">
-            <h1 className='main'>6:30 PM</h1>
+            <h1 className='main-2'>6:30 PM</h1>
             <span className='main-1'>Average out time of teams</span>
           </div>
 
