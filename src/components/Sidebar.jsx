@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Sidebar = ({ adminName }) => {
     return (
-        <div className="col-auto col-md-1 col-xl-2 px-sm-2 px-0 bg-black">
+        <div className="col-auto col-md-1 col-xl-2 px-sm-2 px-0 bg-black " style={{width:"200px"}}>
             <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <Link to="/" className="d-flex align-items-center pb-3 mb-md-1 mt-md-3 me-md-auto text-white text-decoration-none">
                     <span className="fs-5 fw-bolder d-none d-sm-inline">{adminName}</span>

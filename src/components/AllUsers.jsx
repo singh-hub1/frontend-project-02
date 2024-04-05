@@ -37,15 +37,15 @@ function AllUsers() {
     }
   };
 
-  const handleEdit = (id) => {
-    const profileToEdit = userProfiles.find(profile => profile.id === id);
+  const handleEdit = (emp_code) => {
+    const profileToEdit = userProfiles.find(profile => profile.emp_code === emp_code);
     setEditedUser(profileToEdit);
     setIsEditing(true);
   };
 
   const handleSave = async () => {
     try {
-      const userId = editedUser.id; // Assuming id is already a number
+      const userId = editedUser.emp_code; // Assuming id is already a number
       await axios.put(`https://backend-project-02-1.onrender.com/userProfiles/${userId}`, editedUser);
       fetchUserProfiles();
       setEditedUser(null);
@@ -55,9 +55,9 @@ function AllUsers() {
     }
   };
   
-  const handleDelete = async (id) => {
+  const handleDelete = async (emp_code) => {
     try {
-      const userId = parseInt(id); // Convert id to integer
+      const userId = parseInt(emp_code); // Convert id to integer
       await axios.delete(`https://backend-project-02-1.onrender.com/userProfiles/${userId}`);
       fetchUserProfiles();
     } catch (error) {
@@ -86,8 +86,9 @@ function AllUsers() {
           <table className="table table-bordered table-striped">
             <thead className="thead-dark">
               <tr>
-                <th>ID</th>
+                <th>Emp Code</th>
                 <th>Username</th>
+                <th>Profile</th>
                 <th>Name</th>
                 <th>Date of Joining</th>
                 <th>Designation</th>
@@ -97,11 +98,19 @@ function AllUsers() {
             </thead>
             <tbody>
               {userProfiles.map((profile) => (
-                <tr key={profile.id}>
-                  <td>{profile.id}</td>
+                <tr key={profile.emp_code}>
+                  <td>{profile.emp_code}</td>
                   <td>{profile.username}</td>
+
+                  <td className="text-center">
+                          <div className="profile-avatar">
+                            {profile.name.charAt(0).toUpperCase()}
+                          </div>
+                        </td>
+
+
                   <td>
-                    {isEditing && editedUser.id === profile.id ? (
+                    {isEditing && editedUser.emp_code === profile.emp_code ? (
                       <Form.Control
                         type="text"
                         name="name"
@@ -113,7 +122,7 @@ function AllUsers() {
                     )}
                   </td>
                   <td>
-                    {isEditing && editedUser.id === profile.id ? (
+                    {isEditing && editedUser.emp_code === profile.emp_code ? (
                       <Form.Control
                         type="text"
                         name="dateofjoining"
@@ -125,7 +134,7 @@ function AllUsers() {
                     )}
                   </td>
                   <td>
-                    {isEditing && editedUser.id === profile.id ? (
+                    {isEditing && editedUser.emp_code === profile.emp_code ? (
                       <Form.Control
                         type="text"
                         name="designation"
@@ -137,7 +146,7 @@ function AllUsers() {
                     )}
                   </td>
                   <td>
-                    {isEditing && editedUser.id === profile.id ? (
+                    {isEditing && editedUser.emp_code === profile.emp_code ? (
                       <Form.Control
                         type="text"
                         name="department"
@@ -149,13 +158,13 @@ function AllUsers() {
                     )}
                   </td>
                   <td>
-                    {isEditing && editedUser.id === profile.id ? (
+                    {isEditing && editedUser.emp_code === profile.emp_code ? (
                       <>
-                        <Button variant="danger" size="sm" onClick={() => handleDelete(profile.id)}>Delete</Button>{' '}
+                        <Button variant="danger" size="sm" onClick={() => handleDelete(profile.emp_code)}>Delete</Button>{' '}
                         <Button variant="success" size="sm" onClick={handleSave}>Save</Button>
                       </>
                     ) : (
-                      <Button variant="primary" size="sm" onClick={() => handleEdit(profile.id)}>Edit</Button>
+                      <Button variant="primary" size="sm" onClick={() => handleEdit(profile.emp_code)}>Edit</Button>
                     )}
                   </td>
                 </tr>

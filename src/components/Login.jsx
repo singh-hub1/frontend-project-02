@@ -28,7 +28,7 @@ function Login() {
 
       if (response.data.success) {
         // Fetch user profiles after successful
-        // const userProfileResponse = await axios.get('https://backend-project-02-1.onrender.com/userProfiles');
+        // const userProfileResponse = await axios.get('http:localhost:4000/userProfiles');
         // setUserProfiles(userProfileResponse.data);
         // console.log(userProfileResponse.data);
         navigate('/admindashboard/DashboardAdmin');

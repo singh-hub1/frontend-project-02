@@ -45,9 +45,10 @@ function AdminDashboard() {
           <Table striped bordered hover>
             <thead>
               <tr>
+              <th>Emp Code</th>
+              <th>Profile</th>
                 <th>Name</th>
                 <th>Leave Type</th>
-                <th>Employee Code</th>
                 <th>Start Date</th>
                 <th>End Date</th>
                 <th>Days of leave</th>
@@ -57,15 +58,21 @@ function AdminDashboard() {
             <tbody>
               {userProfiles.map(profile => (
                 <tr key={profile.id}>
+                  <td>{profile.emp_code}</td>
+                  <td className="text-center">
+                          <div className="profile-avatar">
+                            {profile.name.charAt(0).toUpperCase()}
+                          </div>
+                        </td>
                   <td>{profile.name}</td>
                   <td>{profile.leavetype}</td>
-                  <td>{profile.empcode}</td>
+                 
                   <td>{new Date(profile.startdate).toLocaleDateString()}</td>
                   <td>{new Date(profile.enddate).toLocaleDateString()}</td>
                   <td>{profile.daysofleave}</td>
                   <td>
-                    <Button variant="success" onClick={() => handleApproveReject(profile.empcode, 'approve')}>Approve</Button>{' '}
-                    <Button variant="danger" onClick={() => handleApproveReject(profile.empcode, 'reject')} disabled={profile.status === 'Approved'}>Reject</Button>
+                    <Button variant="success" onClick={() => handleApproveReject(profile.emp_code, 'approve')}>Approve</Button>{' '}
+                    <Button variant="danger" onClick={() => handleApproveReject(profile.emp_code, 'reject')} disabled={profile.status === 'Approved'}>Reject</Button>
                   </td>
                 </tr>
               ))}

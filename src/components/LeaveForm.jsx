@@ -50,7 +50,7 @@ function LeaveForm() {
             setShowAlert(true);
             setTimeout(() => {
                 setShowAlert(false);
-                navigate("/UserDashboard/LeaveDetails"); // Navigate to the desired route
+                navigate("/UserDashboard/LeaveDetails"); 
             }, 3000);
 
         } catch (error) {

@@ -1,66 +1,142 @@
+.admin-dashboard {
+  display: flex;
+  /* border: 2px solid red; */
+  background-color: rgb(169, 249, 255);
+  margin-top: 0px;
+  width: 100%;
+
+}
+
+.main-content {
+
+  padding: 10px;
+  height: auto;
+
+
+}
+
+.main-1{
+  justify-content: center;
+}
+
+/* .table {
+  width: 100%;
+} */
+
+.sidebar {
+
+  padding: 10px;
+}
+
+
+
+
+/* / //--------------------------------------------------------------------- / */
+
+/* .text-center {
+  text-align: center;
+} */
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(169, 249, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: black; /* or any other text color you want */
+}
+
+
+
+
+.card {
+  width: 20rem;
+  height: 15rem;
+  margin-bottom: 20px;
+  box-sizing: content-box;
+  border-radius: 11px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.logo {
+  height: 40px;
+  width: 120px;
+  /* border: 2px solid yellow;  */
+
+}
+
+.leave-applications {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.leave-applications h2 {
+  text-align: center;
+}
+
 .dashboard-cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  /* grid-gap: 10px; */
-  
+  grid-gap: 2px;
+
 }
 
-.dashboard-card {
+.dashboard-card-11 {
   background: #fff;
-  height: 100px;
-  width: fit-content;
+  height: 150px;
+  width: 90%;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  justify-items: center; 
-  display: inline-block; 
-  margin: 0px;
+  justify-items: center;
+  margin-left: 0%;
+}
+
+.dashboard-card-22 {
+  justify-items: center;
+  background: #fff;
+  height: 150px;
+  width: 100%;
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-right: 90%;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  justify-items: center;
 }
 
 .dashboard-card h3 {
   margin-bottom: 10px;
 }
 
-.main-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background: #fff;
 
-}
-
-.main-1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background: #fff;
-
-}
-
-/* .dashboard-cards-2 {
+.dashboard-cards-2 {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 30px;
-} */
+}
 
 .dashboard-card-2 {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center;  */
-  /* text-align: center;  */
-  margin-top: 50px;
-  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   background: #fff;
   height: auto;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 2px;
+  padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  /* justify-items: center; */
+  justify-items: center;
 }
 
 .dashboard-card-2 h2 {
@@ -72,7 +148,6 @@
   margin-bottom: 20px;
 }
 
-/* / ////////////////////Table///////////////////// / */
 table {
   width: 100%;
   border-spacing: 0;
@@ -110,9 +185,9 @@ tbody tr:hover td:first-child {
   border-left-color: #0F6FDE;
 }
 
-td.status {
+/* td.status {
   text-align: center;
-}
+} */
 
 td.status span {
   font-size: 12px;
@@ -123,6 +198,7 @@ td.status span {
 td.status span.approved {
   color: #FFFFFF;
   background-color: #00C455;
+  /* text-align: left; */
 }
 
 td.status span.decline {
@@ -176,4 +252,24 @@ td.status span.pending {
   border: 1px solid #E7E7E7;
   padding: 8px;
   margin: 4px;
+}
+
+.dashboard-cards-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.dashboard-card-3 {
+  background: #fff;
+  height: auto;
+  width: auto;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  justify-items: center;
 }
