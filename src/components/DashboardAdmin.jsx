@@ -81,6 +81,7 @@ const DashboardAdmin = () => {
       <Navbar1 />
       <div className="admin-dashboard">
         <Sidebar />
+
         <div className="main-content">
           <div className="row p-2">
             <div className="col-md-4">
@@ -163,6 +164,8 @@ const DashboardAdmin = () => {
               </div>
             </div>
           </div>
+
+          
           <div className="row mt-3 p-2">
             <div class="col-md-8">
 

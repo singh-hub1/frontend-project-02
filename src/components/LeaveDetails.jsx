@@ -6,23 +6,35 @@ import UserSidebar from './UserSidebar';
 import axios from 'axios';
 
 function LeaveForm() {
-    const [userStatus, setUserStatus] = useState(null);
-    const [user, setUser] = useState(null);
+
+    const [users, setUser] = useState(null);
+    const [leaveData, setLeaveData] = useState([]);
 
     useEffect(() => {
-        fetchUserStatus();
         const storedUser = localStorage.getItem('user');
+        console.log(storedUser);
         if (storedUser) {
             setUser(JSON.parse(storedUser));
+
+            const employeeCode = JSON.parse(storedUser).emp_code;
+            // console.log(employeeCode);
+            if (employeeCode) {
+                // console.log(employeeCode);
+                fetchLeaveData(employeeCode);
+            }
         }
     }, []);
 
-    const fetchUserStatus = async () => {
+    const fetchLeaveData = async (employeeCode) => {
         try {
-            const response = await axios.get('https://backend-project-02-1.onrender.com/user/status');
-            setUserStatus(response.data.status);
+
+            const url = `https://backend-project-02-1.onrender.com/leavedetails/${employeeCode}`;
+            console.log("Fetching leave data from:", url);
+            const response = await axios.get(url);
+            console.log(response.data);
+            setLeaveData(response.data);
         } catch (error) {
-            console.error('Error fetching user status:', error);
+            console.error('Error fetching leave data:', error);
         }
     };
 
@@ -30,37 +42,41 @@ function LeaveForm() {
         <>
             <Navbar1 />
             <div className="user-dashboard">
-                <UserSidebar user={user} />
-                {/* <h1>User Leave Details</h1> */}
+                <UserSidebar user={users} />
                 <Table striped bordered hover>
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Column 1</th>
-                            <th>Column 2</th>
-                            <th>Column 3</th>
-                            <th>Column 4</th>
-                            <th>Column 5</th>
+                            <th>Emp Code</th>
+                            <th>Profile</th>
+                            <th>Name</th>
+                            <th>Leave Type</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Days of leave</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Row 1, Column 1</td>
-                            <td>Row 1, Column 2</td>
-                            <td>Row 1, Column 3</td>
-                            <td>Row 1, Column 4</td>
-                            <td>Row 1, Column 5</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Row 2, Column 1</td>
-                            <td>Row 2, Column 2</td>
-                            <td>Row 2, Column 3</td>
-                            <td>Row 2, Column 4</td>
-                            <td>Row 2, Column 5</td>
-                        </tr>
-                        {/* Add more rows as needed */}
+                        {leaveData.map((leave, index) => (
+                            <tr key={index}>
+                                <td>{leave.emp_code}</td>
+                                <td className="text-center">
+                                    <div className="profile-avatar">
+                                        {leave.name.charAt(0).toUpperCase()}
+                                    </div>
+                                </td>
+                                <td>{leave.name}</td>
+                                <td>{leave.leavetype}</td>
+
+                                <td>{new Date(leave.startdate).toLocaleDateString()}</td>
+                                <td>{new Date(leave.enddate).toLocaleDateString()}</td>
+
+
+
+                                <td>{leave.daysofleave}</td>
+                                <td>{leave.status}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </Table>
             </div>
@@ -69,3 +85,121 @@ function LeaveForm() {
 }
 
 export default LeaveForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import { Table } from 'react-bootstrap';
+// import { useNavigate } from "react-router-dom";
+// import Navbar1 from './Navbar1';
+// import UserSidebar from './UserSidebar';
+// import axios from 'axios';
+
+// function LeaveForm() {
+
+//     const [users, setUser] = useState(null);
+//     const [leaveData, setLeaveData] = useState([]);
+//     const [loading, setLoading] = useState(true);
+
+//     useEffect(() => {
+//         const storedUser = localStorage.getItem('user');
+//         console.log(storedUser);
+//         if (storedUser) {
+//             setUser(JSON.parse(storedUser));
+
+//             const employeeCode = JSON.parse(storedUser).emp_code;
+//             // console.log(employeeCode);
+//             if (employeeCode) {
+//                 // console.log(employeeCode);
+//                 fetchLeaveData(employeeCode);
+//             }
+//         }
+//     }, []);
+
+//     const fetchLeaveData = async (employeeCode) => {
+//         try {
+
+//             const url = `https://backend-project-02-1.onrender.com/leavedetails/${employeeCode}`;
+//             console.log("Fetching leave data from:", url);
+//             const response = await axios.get(url);
+//             console.log(response.data);
+//             setLeaveData(response.data);
+//             setLoading(false);
+//         } catch (error) {
+//             console.error('Error fetching leave data:', error);
+//             setLoading(false);
+//         }
+//     };
+
+//     return (
+//         <>
+//             <Navbar1 />
+//             <div className="user-dashboard">
+//                 <UserSidebar user={users} />
+//                 {loading ? (
+//                     <p>Loading...</p>
+//                 ) : leaveData.length === 0 ? (
+//                     <p>No leave requests found.</p>
+//                 ) : (
+//                     <Table striped bordered hover>
+//                         <thead>
+//                             <tr>
+//                                 <th>Emp Code</th>
+//                                 <th>Profile</th>
+//                                 <th>Name</th>
+//                                 <th>Leave Type</th>
+//                                 <th>Start Date</th>
+//                                 <th>End Date</th>
+//                                 <th>Days of leave</th>
+//                                 <th>Status</th>
+//                             </tr>
+//                         </thead>
+//                         <tbody>
+//                             {leaveData.map((leave, index) => (
+//                                 <tr key={index}>
+//                                     <td>{leave.emp_code}</td>
+//                                     <td className="text-center">
+//                                         <div className="profile-avatar">
+//                                             {leave.name.charAt(0).toUpperCase()}
+//                                         </div>
+//                                     </td>
+//                                     <td>{leave.name}</td>
+//                                     <td>{leave.leavetype}</td>
+
+//                                     <td>{new Date(leave.startdate).toLocaleDateString()}</td>
+//                                     <td>{new Date(leave.enddate).toLocaleDateString()}</td>
+
+
+
+//                                     <td>{leave.daysofleave}</td>
+//                                     <td>{leave.status}</td>
+//                                 </tr>
+//                             ))}
+//                         </tbody>
+//                     </Table>
+//                 )}
+//             </div>
+//         </>
+//     );
+// }
+
+// export default LeaveForm;

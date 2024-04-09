@@ -7,20 +7,25 @@ import axios from 'axios';
 
 function LeaveForm() {
     const [leaveType, setLeaveType] = useState("");
-    const [empCode, setEmpCode] = useState("");
+   
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const [reason, setReason] = useState("");
-    const [showAlert, setShowAlert] = useState(false); // State for showing alert
+    const [leaveDate, setleavedate] = useState("");
+    const [showAlert, setShowAlert] = useState(false); 
     const location = useLocation();
     const navigate = useNavigate();
 
-    const [user, setUser] = useState(null);
+    const [users, setUser] = useState(null);
+    const [empCode, setEmpCode] = useState();
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
+        // console.log(storedUser);
         if (storedUser) {
+            // console.log(storedUser);
             setUser(JSON.parse(storedUser));
+            setEmpCode(JSON.parse(storedUser));  
         }
     }, []);
 
@@ -32,9 +37,10 @@ function LeaveForm() {
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         try {
             const leaveRequest = {
-                name: user ? user.name : '',
+                name: users ? users.name : '',
                 leaveType,
-                empCode,
+                empCode : empCode ? empCode.emp_code:'' ,
+                leaveDate,
                 startDate,
                 endDate,
                 daysOfLeave: diffDays,
@@ -43,7 +49,7 @@ function LeaveForm() {
             console.log(leaveRequest);
             await axios.post('https://backend-project-02-1.onrender.com/leave-applications', leaveRequest);
             setLeaveType("");
-            setEmpCode("");
+            setleavedate("");
             setStartDate("");
             setEndDate("");
             setReason("");
@@ -62,14 +68,14 @@ function LeaveForm() {
         <>
             <Navbar1 />
             <div style={{ display: 'flex' }}>
-                <UserSidebar user={user} />
+                <UserSidebar user={users} />
                 <div style={{ width: '100%', maxWidth: '600px', margin: '20px auto' }}>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="name">
                             <Form.Label>Name:</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={user ? user.name : ''}
+                                value={users ? users.name : ''}
                                 readOnly
                             />
                         </Form.Group>
@@ -86,11 +92,31 @@ function LeaveForm() {
                             <Form.Label>Emp Code:</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={empCode}
-                                onChange={(e) => setEmpCode(e.target.value)}
+                               
+                                value={empCode ? empCode.emp_code:''}
+                                // value={empCode}
+                                // onChange={(e) => setEmpCode(e.target.value)}
+                                // required
+                            />
+                        </Form.Group>
+
+                        <Form.Group controlId="appliedLeaveDate">
+                            <Form.Label>Applied Leave Date:</Form.Label>
+                            <Form.Control
+                                type="date"
+                                value={leaveDate}
+                                onChange={(e) => setleavedate(e.target.value)}
                                 required
                             />
                         </Form.Group>
+
+
+
+
+
+
+
+
                         <Form.Group controlId="startDate">
                             <Form.Label>Start Date:</Form.Label>
                             <Form.Control
