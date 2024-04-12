@@ -3,19 +3,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 import Login from './components/Login'
-import Dashboard from './components/Dashboard'
-import Employee from './components/Employee'
-import Profile from './components/Profile'
-import Home from './components/Home'
-import AddEmployee from './components/AddEmployee'
-import EditEmployee from './components/EditEmployee'
+
+
+
 import Start from './components/Start'
 import EmployeeDetail from './components/EmployeeDetail'
 import EmployeeLogin from './components/EmployeeLogin'
 import './index.css';
 import './components/style.css'
 import User from './components/User'
-import Header from './components/Header'
+
 import Accounts from './components/Accounts'
 import Learning from './components/Learning'
 import UserDashboard from './components/UserDashboard'
@@ -44,7 +41,7 @@ function App() {
         <Route path='/learning' element={<Learning />}></Route>
 
 
-        <Route path="/admindashboard" element={<AdminDashboard />} />  
+        <Route path="/admindashboard" element={<AdminDashboard />} />
 
         <Route path="/UserDashboard" element={<UserDashboard />} />
         <Route path="/Navbar" element={<Navbar />} />
@@ -57,10 +54,10 @@ function App() {
 
         <Route path="/UserDashboard/LeaveForm" element={<LeaveForm />} />
 
-        <Route path="/UserDashboard/LeaveDetails" element={<LeaveDetails/>} />
+        <Route path="/UserDashboard/LeaveDetails" element={<LeaveDetails />} />
 
-<Route path="/admindashboard/DashboardAdmin" element={<DashboardAdmin/>} />
-<Route path="/UserDashboard/summary" element={<UserSummary/>} />
+        <Route path="/admindashboard/DashboardAdmin" element={<DashboardAdmin />} />
+        <Route path="/UserDashboard/summary" element={<UserSummary />} />
 
 
         {/* <Route path="/DasBoard" element={<DasBoard />} /> */}
