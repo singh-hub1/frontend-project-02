@@ -38,7 +38,7 @@ const DashboardAdmin = () => {
 
   const fetchLeaveData = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/leave-data');
+      const response = await axios.get('https://backend-project-02-1.onrender.com/api/leave-data');
       setLeaveData(response.data);
     } catch (error) {
       console.error('Error fetching leave data:', error);
@@ -49,7 +49,7 @@ const DashboardAdmin = () => {
 
   const fetchRejectedData = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/Rejected-data');
+      const response = await axios.get('https://backend-project-02-1.onrender.com/api/Rejected-data');
       setRejectedData(response.data);
     } catch (error) {
       console.error('Error fetching leave data:', error);
@@ -58,7 +58,7 @@ const DashboardAdmin = () => {
 
   const fetchApprovedData = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/approved-data');
+      const response = await axios.get('https://backend-project-02-1.onrender.com/api/approved-data');
       setApprovedData(response.data);
     } catch (error) {
       console.error('Error fetching leave data:', error);
@@ -68,7 +68,7 @@ const DashboardAdmin = () => {
   const [trackingData, setTrackingData] = useState([])
   const fetchTrackingLeaves = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/tracking-leaves');
+      const response = await axios.get('https://backend-project-02-1.onrender.com/api/tracking-leaves');
       setTrackingData(response.data);
     } catch (error) {
       console.error('Error fetching leave data:', error);

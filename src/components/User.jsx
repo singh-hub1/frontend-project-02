@@ -27,7 +27,7 @@ function Login() {
     e.preventDefault();
     try {
 
-      const response = await axios.post('http://localhost:4000/resetpassword', resetPasswordFormData);
+      const response = await axios.post('https://backend-project-02-1.onrender.com/resetpassword', resetPasswordFormData);
       console.log('Password reset successful');
       setShowResetPassword(false);
       setError('');
@@ -67,7 +67,7 @@ function Login() {
     e.preventDefault();
     console.log(formData);
     try {
-      const response = await axios.post('http://localhost:4000/userlogin', formData);
+      const response = await axios.post('https://backend-project-02-1.onrender.com/userlogin', formData);
       console.log('Form submitted successfully');
 
       if (response.data.success) {         

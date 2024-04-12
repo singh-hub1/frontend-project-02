@@ -33,7 +33,7 @@ function UserDashboard() {
       const storedUser = localStorage.getItem('user');
       const employeeCode = JSON.parse(storedUser).emp_code;
       const employeeUsername = JSON.parse(storedUser).username;
-      const url = `http://localhost:4000/timesheet?employeeCode=${employeeCode}&employeeUsername=${employeeUsername}`;
+      const url = `https://backend-project-02-1.onrender.com/timesheet?employeeCode=${employeeCode}&employeeUsername=${employeeUsername}`;
 
       const response = await axios.get(url);
       setTimesheetData(response.data);
@@ -54,7 +54,7 @@ function UserDashboard() {
       const employeeUsername = JSON.parse(storedUser).username;
       console.log(employeeUsername);
 
-      const url = `http://localhost:4000/timein`;
+      const url = `https://backend-project-02-1.onrender.com/timein`;
 
 
       // Prepare data to send to the backend
@@ -88,7 +88,7 @@ function UserDashboard() {
       const employeeUsername = JSON.parse(storedUser).username;
       console.log(employeeUsername);
 
-      const url = `http://localhost:4000/timeout`;
+      const url = `https://backend-project-02-1.onrender.com/timeout`;
 
 
       // Prepare data to send to the backend
@@ -119,7 +119,7 @@ function UserDashboard() {
       const employeeUsername = JSON.parse(storedUser).username;
       console.log(employeeUsername);
 
-      const url = `http://localhost:4000/teabreak`;
+      const url = `https://backend-project-02-1.onrender.com/teabreak`;
 
 
       // Prepare data to send to the backend
@@ -152,7 +152,7 @@ function UserDashboard() {
       const employeeUsername = JSON.parse(storedUser).username;
       console.log(employeeUsername);
 
-      const url = `http://localhost:4000/smokingbreak`;
+      const url = `https://backend-project-02-1.onrender.com/smokingbreak`;
 
 
       // Prepare data to send to the backend

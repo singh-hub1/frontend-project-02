@@ -47,7 +47,7 @@ function LeaveForm() {
                 reason
             };
             console.log(leaveRequest);
-            await axios.post('http://localhost:4000/leave-applications', leaveRequest);
+            await axios.post('https://backend-project-02-1.onrender.com/leave-applications', leaveRequest);
             setLeaveType("");
             setleavedate("");
             setStartDate("");
