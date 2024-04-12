@@ -15,7 +15,7 @@ function AdminDashboard() {
 
   const fetchUserProfiles = async () => {
     try {
-      const response = await axios.get('https://backend-project-02-1.onrender.com/leaveapplications');
+      const response = await axios.get('http://localhost:4000/leaveapplications');
       setUserProfiles(response.data);
     } catch (error) {
       console.error('Error fetching user profiles:', error);
@@ -25,7 +25,7 @@ function AdminDashboard() {
   const handleApproveReject = async (userId, action) => {
     try {
       const updatedStatus = action === 'approve' ? 'Approved' : 'Rejected';
-      await axios.put(`https://backend-project-02-1.onrender.com/leaveapplications/${userId}`, { status: updatedStatus });
+      await axios.put(`http://localhost:4000/leaveapplications/${userId}`, { status: updatedStatus });
       fetchUserProfiles();
       if (action === 'approve') {
         alert(`Leave application for user with Employee Code ${userId} has been approved.`);

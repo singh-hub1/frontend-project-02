@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button, Container, Row, Col, Form, Image } from "react-bootstrap";
 import Header from './Header';
 import '../Hrms/employeeLogin.css'
-
+import homelogo from "../Images/Picture4.png";
 function EmployeeLogin() {
 
   const [values, setValues] = useState({
@@ -36,8 +36,8 @@ function EmployeeLogin() {
       < Header />
 
       <div className="employee-login">
-        <img className="logo" src="/Images/logo-blitz.png" alt="Logo" />
-
+        {/* <img className="logo" src="/Images/logo-blitz.png" alt="Logo" /> */}
+        <Image  className="logo" src={homelogo} alt="Logo" />
         <div className='content'>
           <Button className='Admin-btn' variant="primary" size="lg"  onClick={() => navigate("/login")}>
             Admin Login

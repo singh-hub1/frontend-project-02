@@ -1,16 +1,20 @@
 import React from 'react';
-
+import homelogo from "../Images/Picture4.png";
+import { Button, Container, Row, Col, Form, Image, Modal } from "react-bootstrap";
 export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-0">
       <div className="d-flex justify-content-between w-100">
         <div className="flex-row d-flex">
-        <img
+          {/* <img
             src="/Images/Picture4.png"
             alt="Logo"
             className='logo'
             style={{ height: '75px' }} // Inline style for the logo height
-          />
+          /> */}
+
+          <Image style={{ height: '75px' }} className="logo" src={homelogo} alt="Logo" />
+
           <button
             type="button"
             className="navbar-toggler mr-2"

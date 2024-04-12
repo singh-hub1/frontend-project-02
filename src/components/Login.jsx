@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Container, Row, Col, Form, Image } from 'react-bootstrap';
 import Header from './Header';
 import '../Hrms/Admin.css';
-
+import homelogo from "../Images/Picture4.png";
 function Login() {
   const [error, setError] = useState('');
   const [userProfiles, setUserProfiles] = useState([]);
@@ -23,7 +23,7 @@ function Login() {
     console.log(formData);
     try {
       // console.log("heelo inside thet try block");  //This is for testing purpose 
-      const response = await axios.post('https://backend-project-02-1.onrender.com/adminlogin', formData);
+      const response = await axios.post('http://localhost:4000/adminlogin', formData);
       console.log('Form submitted successfully');
 
       if (response.data.success) {
@@ -51,7 +51,7 @@ function Login() {
     <div className="employee-dashboard">
       <Header />
       <div className="employee-login">
-        <img className="logo" src="/Images/logo-blitz.png" alt="Logo" />
+      <Image  className="logo" src={homelogo} alt="Logo" />
         <div className="admin-container">
           <button className="Blitz-admin" type="submit" onClick={() => navigate('/employeeLogin')}>
             Blitz Admin

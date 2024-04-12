@@ -32,7 +32,7 @@ import UserSummary from './components/UserSummary'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/LMS'>
       <Routes>
         <Route path='/' element={<Start />}></Route>
         <Route path='/employeeLogin' element={<EmployeeLogin />}></Route>

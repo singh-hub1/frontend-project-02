@@ -7,12 +7,12 @@ import axios from 'axios';
 
 function LeaveForm() {
     const [leaveType, setLeaveType] = useState("");
-   
+
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const [reason, setReason] = useState("");
     const [leaveDate, setleavedate] = useState("");
-    const [showAlert, setShowAlert] = useState(false); 
+    const [showAlert, setShowAlert] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ function LeaveForm() {
         if (storedUser) {
             // console.log(storedUser);
             setUser(JSON.parse(storedUser));
-            setEmpCode(JSON.parse(storedUser));  
+            setEmpCode(JSON.parse(storedUser));
         }
     }, []);
 
@@ -39,7 +39,7 @@ function LeaveForm() {
             const leaveRequest = {
                 name: users ? users.name : '',
                 leaveType,
-                empCode : empCode ? empCode.emp_code:'' ,
+                empCode: empCode ? empCode.emp_code : '',
                 leaveDate,
                 startDate,
                 endDate,
@@ -47,7 +47,7 @@ function LeaveForm() {
                 reason
             };
             console.log(leaveRequest);
-            await axios.post('https://backend-project-02-1.onrender.com/leave-applications', leaveRequest);
+            await axios.post('http://localhost:4000/leave-applications', leaveRequest);
             setLeaveType("");
             setleavedate("");
             setStartDate("");
@@ -56,7 +56,7 @@ function LeaveForm() {
             setShowAlert(true);
             setTimeout(() => {
                 setShowAlert(false);
-                navigate("/UserDashboard/LeaveDetails"); 
+                navigate("/UserDashboard/LeaveDetails");
             }, 3000);
 
         } catch (error) {
@@ -67,10 +67,12 @@ function LeaveForm() {
     return (
         <>
             <Navbar1 />
-            <div style={{ display: 'flex' }}>
+            <div style={{ display: 'flex', backgroundColor: 'rgb(169, 249, 255)' }}>
                 <UserSidebar user={users} />
-                <div style={{ width: '100%', maxWidth: '600px', margin: '20px auto' }}>
-                    <Form onSubmit={handleSubmit}>
+                <div style={{ width: '100%', maxWidth: '600px', margin: '20px auto', border: '1px solid grey' }}>
+                    <h3 style={{ marginTop: '10px', marginLeft: '160px' }}>Leave Form Request</h3>
+                    <Form onSubmit={handleSubmit} style={{ padding: '20px' }}>
+
                         <Form.Group controlId="name">
                             <Form.Label>Name:</Form.Label>
                             <Form.Control
@@ -92,11 +94,11 @@ function LeaveForm() {
                             <Form.Label>Emp Code:</Form.Label>
                             <Form.Control
                                 type="text"
-                               
-                                value={empCode ? empCode.emp_code:''}
-                                // value={empCode}
-                                // onChange={(e) => setEmpCode(e.target.value)}
-                                // required
+
+                                value={empCode ? empCode.emp_code : ''}
+                            // value={empCode}
+                            // onChange={(e) => setEmpCode(e.target.value)}
+                            // required
                             />
                         </Form.Group>
 
@@ -109,13 +111,6 @@ function LeaveForm() {
                                 required
                             />
                         </Form.Group>
-
-
-
-
-
-
-
 
                         <Form.Group controlId="startDate">
                             <Form.Label>Start Date:</Form.Label>
@@ -144,9 +139,10 @@ function LeaveForm() {
                                 required
                             />
                         </Form.Group>
-                        <Button variant="primary" type="submit" style={{ marginTop: '30px' }}>
+                        <Button variant="primary" type="submit" style={{ marginTop: '30px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }}>
                             Submit
                         </Button>
+
 
                     </Form>
                     {/* Alert component to show form submission success */}

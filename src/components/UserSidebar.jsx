@@ -20,7 +20,7 @@ const UserSidebar = ({ user }) => {
 
                             </td>
                             <td style={{ padding: "6px" }}>
-                                <h2 style={{ color: 'white' }}>{user.name}</h2>
+                                <h2 style={{ color: 'white',fontSize:'20px'}}>{user.name}</h2>
                             </td>
 
 

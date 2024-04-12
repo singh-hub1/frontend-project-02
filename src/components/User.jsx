@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Container, Row, Col, Form, Image, Modal } from "react-bootstrap";
 import Header from './Header';
 import '../Hrms/Admin.css';
-
+import homelogo from "../Images/Picture4.png";
 
 function Login() {
 
@@ -27,7 +27,7 @@ function Login() {
     e.preventDefault();
     try {
 
-      const response = await axios.post('https://backend-project-02-1.onrender.com/resetpassword', resetPasswordFormData);
+      const response = await axios.post('http://localhost:4000/resetpassword', resetPasswordFormData);
       console.log('Password reset successful');
       setShowResetPassword(false);
       setError('');
@@ -67,7 +67,7 @@ function Login() {
     e.preventDefault();
     console.log(formData);
     try {
-      const response = await axios.post('https://backend-project-02-1.onrender.com/userlogin', formData);
+      const response = await axios.post('http://localhost:4000/userlogin', formData);
       console.log('Form submitted successfully');
 
       if (response.data.success) {         
@@ -96,7 +96,7 @@ function Login() {
     <div className='employee-dashboard'>
       <Header />
       <div className="employee-login">
-        <img className="logo" src="/Images/logo-blitz.png" alt="Logo" />
+      <Image  className="logo" src={homelogo} alt="Logo" />
         <div className=" admin-container">
           <button className='Blitz-admin' type="submit" onClick={() => navigate("/employeeLogin")}>Blitz User</button>
           <form onSubmit={handleSubmit} className=" blitz-form">

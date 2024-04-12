@@ -1,6 +1,6 @@
 .employee-dashboard {
-    background: url("/public/Images/Picture5.jfif");
-    background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("/public/Images/Picture5.jfif");
+    background: url("/src/Images/Picture5.jfif");
+    background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("/src/Images/Picture5.jfif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 120%;
@@ -70,8 +70,8 @@
     }
 
     .employee-dashboard {
-        background: url("/public/Images/Picture5.jfif");
-        background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("/public/Images/Picture5.jfif");
+        background: url("/src/Images/Picture5.jfif");
+        background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("/src/Images/Picture5.jfif");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;

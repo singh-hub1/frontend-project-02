@@ -1,6 +1,6 @@
 .Accounts-dashboard {
-    background: url("/public/Images/Lms-background.jfif");
-    background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("/public/Images/Lms-background.jfif");
+    background: url("/src/Images/Lms-background.png");
+    background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("/src/Images/Lms-background.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 120%;
@@ -58,8 +58,8 @@
     }
 
     .Accounts-dashboard {
-        background: url("/public/Images/Lms-background.jfif");
-        background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("/public/Images/Lms-background.jfif");
+        background: url("/src/Images/Lms-background.png");
+        background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("/src/Images/Lms-background.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;

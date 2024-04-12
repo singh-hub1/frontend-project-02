@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Container, Row, Col, Form, Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../components/style.css";
-
+import homelogo from "../Images/Picture4.png";
 function Start() {
   const navigate = useNavigate();
 
@@ -73,7 +73,7 @@ function Start() {
               </p>
             </Col>
             <Col className="text-right">
-            <Image src="/Images/Picture4.png" alt="Logo" />
+            <Image src={homelogo} alt="Logo" />
             </Col>
           </Row>
         </Container>

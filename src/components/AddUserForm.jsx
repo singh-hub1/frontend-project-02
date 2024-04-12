@@ -9,7 +9,7 @@ import '../Hrms/newusersignup.css';
 const AddUserForm = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        emp_code: '',
+        emp_code: 'Blitz-',
         username: '',
         password: '',
         confirmpassword: '',
@@ -33,11 +33,11 @@ const AddUserForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('https://backend-project-02-1.onrender.com/newuserdata', formData);
+            await axios.post('http://localhost:4000/newuserdata', formData);
             console.log('Employee details saved successfully');
 
             setFormData({
-                emp_code: '',
+                emp_code: 'Blitz-',
                 username: '',
                 password: '',
                 confirmpassword: '',
@@ -74,7 +74,7 @@ const AddUserForm = () => {
 
     const fetchAdminName = async () => {
         try {
-            const response = await axios.get('https://backend-project-02-1.onrender.com/admin/profile');
+            const response = await axios.get('http://localhost:4000/admin/profile');
             setAdminName(response.data.name);
         } catch (error) {
             console.error('Error fetching admin name:', error);
@@ -84,10 +84,10 @@ const AddUserForm = () => {
     return (
         <>
             <Navbar1 />
-            <div className="admin-dashboard">
+            <div style={{ display: 'flex', backgroundColor: 'rgb(169, 249, 255)' }}>
                 <Sidebar adminName={adminName} />
-                <div style={{ width: '100%', maxWidth: '600px', margin: '20px auto' }}>
-
+                <div style={{ width: '100%', maxWidth: '600px', margin: '20px auto', border: '1px solid grey' }}>
+                <h3 style={{ marginTop: '10px', marginLeft: '160px' }}>Add User Form </h3>
                 {submitted && (
                                 <Alert variant="success" className="mt-3">
                                     Form submitted successfully!
@@ -95,7 +95,7 @@ const AddUserForm = () => {
                             )}
 
                     <Form onSubmit={handleSubmit}>
-                        <h1 style={{ textAlign: 'center' }}>Add User</h1>
+                        {/* <h1 style={{ textAlign: 'center' }}>Add User</h1> */}
                         <div style={{ padding: '20px' }}>
 
                    

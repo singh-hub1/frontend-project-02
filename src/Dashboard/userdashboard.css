@@ -30,7 +30,7 @@
     background: #fff;
     height: auto;
     width: 100%;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -42,9 +42,9 @@
 
   .user-dashboard-card-12 {
     background: #fff;
-    height: auto;
+    height: 302px;
     width: 100%;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -53,14 +53,4 @@
     margin-top: 30px;
   }
 
-  /* .time-line-card {
-  width: 1000px;
-   height: 200px;
-   border: 2px solid blue;
-   
-
-  } */
-  .time-line-card{
-    outline:0ch;
-  }
 
