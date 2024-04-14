@@ -44,7 +44,7 @@ function App() {
         <Route path='/learning' element={<Learning />}></Route>
 
 
-        <Route path="/admindashboard" element={<AdminDashboard />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />  
 
         <Route path="/UserDashboard" element={<UserDashboard />} />
         <Route path="/Navbar" element={<Navbar />} />
@@ -57,10 +57,10 @@ function App() {
 
         <Route path="/UserDashboard/LeaveForm" element={<LeaveForm />} />
 
-        <Route path="/UserDashboard/LeaveDetails" element={<LeaveDetails />} />
+        <Route path="/UserDashboard/LeaveDetails" element={<LeaveDetails/>} />
 
-        <Route path="/admindashboard/DashboardAdmin" element={<DashboardAdmin />} />
-        <Route path="/UserDashboard/summary" element={<UserSummary />} />
+<Route path="/admindashboard/DashboardAdmin" element={<DashboardAdmin/>} />
+<Route path="/UserDashboard/summary" element={<UserSummary/>} />
 
 
         {/* <Route path="/DasBoard" element={<DasBoard />} /> */}
