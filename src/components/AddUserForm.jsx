@@ -33,7 +33,7 @@ const AddUserForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:4000/newuserdata', formData);
+            await axios.post('https://backend-project-02-1.onrender.com/newuserdata', formData);
             console.log('Employee details saved successfully');
 
             setFormData({
@@ -74,7 +74,7 @@ const AddUserForm = () => {
 
     const fetchAdminName = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/admin/profile');
+            const response = await axios.get('https://backend-project-02-1.onrender.com/admin/profile');
             setAdminName(response.data.name);
         } catch (error) {
             console.error('Error fetching admin name:', error);

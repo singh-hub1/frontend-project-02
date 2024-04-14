@@ -30,7 +30,7 @@ function LeaveForm() {
     const fetchLeaveData = async (employeeCode) => {
         try {
 
-            const url = `http://localhost:4000/leavedetails/${employeeCode}`;
+            const url = `https://backend-project-02-1.onrender.com/leavedetails/${employeeCode}`;
             console.log("Fetching leave data from:", url);
             const response = await axios.get(url);
             console.log(response.data);

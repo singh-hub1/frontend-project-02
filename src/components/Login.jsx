@@ -23,7 +23,7 @@ function Login() {
     console.log(formData);
     try {
       // console.log("heelo inside thet try block");  //This is for testing purpose 
-      const response = await axios.post('http://localhost:4000/adminlogin', formData);
+      const response = await axios.post('https://backend-project-02-1.onrender.com/adminlogin', formData);
       console.log('Form submitted successfully');
 
       if (response.data.success) {
