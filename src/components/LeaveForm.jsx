@@ -11,7 +11,7 @@ function LeaveForm() {
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const [reason, setReason] = useState("");
-    const [leaveDate, setleavedate] = useState("");
+    // const [leaveDate, setleavedate] = useState("");
     const [showAlert, setShowAlert] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
@@ -35,21 +35,22 @@ function LeaveForm() {
         const end = new Date(endDate);
         const diffTime = Math.abs(end - start);
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        const diffDaysPlusOne = diffDays + 1;
         try {
             const leaveRequest = {
                 name: users ? users.name : '',
                 leaveType,
                 empCode: empCode ? empCode.emp_code : '',
-                leaveDate,
+                // leaveDate,
                 startDate,
                 endDate,
-                daysOfLeave: diffDays,
+                daysOfLeave: diffDaysPlusOne,
                 reason
             };
-            console.log(leaveRequest);
-            await axios.post('https://backend-project-02-1.onrender.com/leave-applications', leaveRequest);
+            console.log(leaveRequest.startDate);
+            await axios.post('http://localhost:4000/leave-applications', leaveRequest);
             setLeaveType("");
-            setleavedate("");
+            // setleavedate("");
             setStartDate("");
             setEndDate("");
             setReason("");
@@ -81,15 +82,23 @@ function LeaveForm() {
                                 readOnly
                             />
                         </Form.Group>
+
                         <Form.Group controlId="leaveType">
                             <Form.Label>Leave Type:</Form.Label>
-                            <Form.Control
-                                type="text"
+                            <Form.Select
                                 value={leaveType}
                                 onChange={(e) => setLeaveType(e.target.value)}
                                 required
-                            />
+                            >
+                                <option value="">Select Leave Type</option>
+                                <option value="Vacation">Vacation</option>
+                                <option value="Sick Leave">Sick Leave</option>
+                                <option value="Maternity/Paternity Leave">Maternity/Paternity Leave</option>
+                                {/* Add more options as needed */}
+                            </Form.Select>
                         </Form.Group>
+
+
                         <Form.Group controlId="empCode">
                             <Form.Label>Emp Code:</Form.Label>
                             <Form.Control
@@ -102,7 +111,7 @@ function LeaveForm() {
                             />
                         </Form.Group>
 
-                        <Form.Group controlId="appliedLeaveDate">
+                        {/* <Form.Group controlId="appliedLeaveDate">
                             <Form.Label>Applied Leave Date:</Form.Label>
                             <Form.Control
                                 type="date"
@@ -110,7 +119,7 @@ function LeaveForm() {
                                 onChange={(e) => setleavedate(e.target.value)}
                                 required
                             />
-                        </Form.Group>
+                        </Form.Group> */}
 
                         <Form.Group controlId="startDate">
                             <Form.Label>Start Date:</Form.Label>
@@ -121,6 +130,8 @@ function LeaveForm() {
                                 required
                             />
                         </Form.Group>
+
+
                         <Form.Group controlId="endDate">
                             <Form.Label>End Date:</Form.Label>
                             <Form.Control

@@ -9,7 +9,6 @@ import { BsForward } from "react-icons/bs";
 import { FaFolderOpen } from "react-icons/fa6";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { LiaSmokingSolid } from "react-icons/lia";
-// import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 function UserDashboard() {
@@ -23,20 +22,21 @@ function UserDashboard() {
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
-    // Fetch timesheet data when component mounts
+   
     fetchTimesheetData();
   }, []);
 
-  // Function to fetch timesheet data
+ 
   const fetchTimesheetData = async () => {
     try {
       const storedUser = localStorage.getItem('user');
       const employeeCode = JSON.parse(storedUser).emp_code;
       const employeeUsername = JSON.parse(storedUser).username;
-      const url = `https://backend-project-02-1.onrender.com/timesheet?employeeCode=${employeeCode}&employeeUsername=${employeeUsername}`;
+      const url = `http://localhost:4000/timesheet?employeeCode=${employeeCode}&employeeUsername=${employeeUsername}`;
 
       const response = await axios.get(url);
       setTimesheetData(response.data);
+      // window.location.reload();
     } catch (error) {
       console.error('Error fetching timesheet data:', error);
     }
@@ -54,10 +54,10 @@ function UserDashboard() {
       const employeeUsername = JSON.parse(storedUser).username;
       console.log(employeeUsername);
 
-      const url = `https://backend-project-02-1.onrender.com/timein`;
+      const url = `http://localhost:4000/timein`;
 
 
-      // Prepare data to send to the backend
+    
       const requestData = {
         employeeCode: employeeCode,
         employeeUsername: employeeUsername
@@ -78,21 +78,15 @@ function UserDashboard() {
       const storedUser = localStorage.getItem('user');
       console.log(storedUser);
 
-
-
-
-
       const employeeCode = JSON.parse(storedUser).emp_code;
       console.log(employeeCode);
 
       const employeeUsername = JSON.parse(storedUser).username;
       console.log(employeeUsername);
 
-      const url = `https://backend-project-02-1.onrender.com/timeout`;
+      const url = `http://localhost:4000/timeout`;
 
-
-      // Prepare data to send to the backend
-      const requestData = {
+         const requestData = {
         employeeCode: employeeCode,
         employeeUsername: employeeUsername
       };
@@ -112,17 +106,16 @@ function UserDashboard() {
       const storedUser = localStorage.getItem('user');
       console.log(storedUser);
 
-
       const employeeCode = JSON.parse(storedUser).emp_code;
       console.log(employeeCode);
 
       const employeeUsername = JSON.parse(storedUser).username;
       console.log(employeeUsername);
 
-      const url = `https://backend-project-02-1.onrender.com/teabreak`;
+      const url = `http://localhost:4000/teabreak`;
 
 
-      // Prepare data to send to the backend
+
       const requestData = {
         employeeCode: employeeCode,
         employeeUsername: employeeUsername
@@ -143,16 +136,13 @@ function UserDashboard() {
       const storedUser = localStorage.getItem('user');
       console.log(storedUser);
 
-
-
-
       const employeeCode = JSON.parse(storedUser).emp_code;
       console.log(employeeCode);
 
       const employeeUsername = JSON.parse(storedUser).username;
       console.log(employeeUsername);
 
-      const url = `https://backend-project-02-1.onrender.com/smokingbreak`;
+      const url = `http://localhost:4000/smokingbreak`;
 
 
       // Prepare data to send to the backend

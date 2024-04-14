@@ -19,7 +19,7 @@ function AllUsers() {
 
   const fetchUserProfiles = async () => {
     try {
-      const response = await axios.get('https://backend-project-02-1.onrender.com/userProfiles');
+      const response = await axios.get('http://localhost:4000/userProfiles');
       setUserProfiles(response.data);
       console.log(response.data);
     } catch (error) {
@@ -29,7 +29,7 @@ function AllUsers() {
 
   const fetchAdminName = async () => {
     try {
-      const response = await axios.get('https://backend-project-02-1.onrender.com/admin/profile');
+      const response = await axios.get('http://localhost:4000/admin/profile');
       console.log(response.data.name);
       setAdminName(response.data.name);
     } catch (error) {
@@ -46,7 +46,7 @@ function AllUsers() {
   const handleSave = async () => {
     try {
       const userId = editedUser.emp_code; // Assuming id is already a number
-      await axios.put(`https://backend-project-02-1.onrender.com/userProfiles/${userId}`, editedUser);
+      await axios.put(`http://localhost:4000/userProfiles/${userId}`, editedUser);
       fetchUserProfiles();
       setEditedUser(null);
       setIsEditing(false);
@@ -54,18 +54,18 @@ function AllUsers() {
       console.error('Error saving user profile:', error);
     }
   };
-  
+
   const handleDelete = async (emp_code) => {
     try {
       const userId = parseInt(emp_code); // Convert id to integer
-      await axios.delete(`https://backend-project-02-1.onrender.com/userProfiles/${userId}`);
+      await axios.delete(`http://localhost:4000/userProfiles/${userId}`);
       fetchUserProfiles();
     } catch (error) {
       console.error('Error deleting user profile:', error);
     }
   };
-  
-  
+
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -75,14 +75,23 @@ function AllUsers() {
     }));
   };
 
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
+
+
   return (
     <>
-     <Navbar1 />
+      <Navbar1 />
       <div className="admin-dashboard">
         <Sidebar adminName={adminName} />
         <div className="main-content">
           <h2 className="text-center">User Profiles</h2>
-        
+
           <table className="table table-bordered table-striped">
             <thead className="thead-dark">
               <tr>
@@ -103,10 +112,10 @@ function AllUsers() {
                   <td>{profile.username}</td>
 
                   <td className="text-center">
-                          <div className="profile-avatar">
-                            {profile.name.charAt(0).toUpperCase()}
-                          </div>
-                        </td>
+                    <div className="profile-avatar">
+                      {profile.name.charAt(0).toUpperCase()}
+                    </div>
+                  </td>
 
 
                   <td>
@@ -121,6 +130,8 @@ function AllUsers() {
                       profile.name
                     )}
                   </td>
+
+
                   <td>
                     {isEditing && editedUser.emp_code === profile.emp_code ? (
                       <Form.Control
@@ -130,9 +141,11 @@ function AllUsers() {
                         onChange={handleInputChange}
                       />
                     ) : (
-                      profile.dateofjoining
+                      formatDate(profile.dateofjoining) // Format the date here
                     )}
                   </td>
+
+
                   <td>
                     {isEditing && editedUser.emp_code === profile.emp_code ? (
                       <Form.Control
@@ -166,8 +179,8 @@ function AllUsers() {
                     ) : (
                       // <Button variant="primary" size="sm" onClick={() => handleEdit(profile.emp_code)}>Edit</Button>
                       <Button variant="warning" size="sm" onClick={() => handleEdit(profile.emp_code)}>
-                      Edit
-                    </Button>
+                        Edit
+                      </Button>
                     )}
                   </td>
                 </tr>
@@ -176,7 +189,7 @@ function AllUsers() {
           </table>
         </div>
       </div>
-      
+
     </>
   );
 }

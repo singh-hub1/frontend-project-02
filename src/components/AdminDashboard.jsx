@@ -15,7 +15,7 @@ function AdminDashboard() {
 
   const fetchUserProfiles = async () => {
     try {
-      const response = await axios.get('https://backend-project-02-1.onrender.com/leaveapplications');
+      const response = await axios.get('http://localhost:4000/leaveapplications');
       setUserProfiles(response.data);
     } catch (error) {
       console.error('Error fetching user profiles:', error);
@@ -25,7 +25,7 @@ function AdminDashboard() {
   const handleApproveReject = async (userId, action) => {
     try {
       const updatedStatus = action === 'approve' ? 'Approved' : 'Rejected';
-      await axios.put(`https://backend-project-02-1.onrender.com/leaveapplications/${userId}`, { status: updatedStatus });
+      await axios.put(`http://localhost:4000/leaveapplications/${userId}`, { status: updatedStatus });
       fetchUserProfiles();
       if (action === 'approve') {
         alert(`Leave application for user with Employee Code ${userId} has been approved.`);
@@ -34,7 +34,13 @@ function AdminDashboard() {
       console.error(`Error ${action} leave application with ID ${userId}:`, error);
     }
   };
-
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+}
   return (
     <>
       <Navbar1 />
@@ -48,6 +54,7 @@ function AdminDashboard() {
               <th>Emp Code</th>
               <th>Profile</th>
                 <th>Name</th>
+                <th>Applied Date</th>
                 <th>Leave Type</th>
                 <th>Start Date</th>
                 <th>End Date</th>
@@ -65,11 +72,12 @@ function AdminDashboard() {
                           </div>
                         </td>
                   <td>{profile.name}</td>
+                  <td>{formatDate(profile.applied_leave_dates)}</td>
                   <td>{profile.leavetype}</td>
                  
-                  <td>{new Date(profile.startdate).toLocaleDateString()}</td>
-                  <td>{new Date(profile.enddate).toLocaleDateString()}</td>
-                  <td>{profile.daysofleave}</td>
+                  <td>{formatDate(profile.startdate)}</td>
+                  <td>{formatDate(profile.enddate)}</td>
+                  <td  style={{textAlign: 'left',paddingLeft:'40px'}}>{profile.daysofleave}</td>
                   <td>
                     <Button variant="success" onClick={() => handleApproveReject(profile.emp_code, 'approve')}>Approve</Button>{' '}
                     <Button variant="danger" onClick={() => handleApproveReject(profile.emp_code, 'reject')} disabled={profile.status === 'Approved'}>Reject</Button>

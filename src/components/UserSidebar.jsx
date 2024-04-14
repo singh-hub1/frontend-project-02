@@ -69,7 +69,7 @@ const UserSidebar = ({ user }) => {
                         </Link>
                     </li>
                     <li>
-                        <a href="/employeeLogin" className="nav-link text-white px-0 align-middle">
+                        <a href="/LMS/employeeLogin" className="nav-link text-white px-0 align-middle">
                             <i className="fs-4 bi-power"></i> <span className="ms-1 d-none d-sm-inline">Logout</span>
                         </a>
                     </li>

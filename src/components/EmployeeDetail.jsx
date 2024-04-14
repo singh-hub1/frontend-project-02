@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button, Container, Row, Col, Form, Image } from "react-bootstrap";
 import Header from './Header';
 import '../Hrms/newusersignup.css'
-
+import homelogo from "../Images/Picture4.png";
 function EmployeeDetail() {
     const navigate = useNavigate()
     const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ function EmployeeDetail() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('https://backend-project-02-1.onrender.com/newuserdata', formData);
+            await axios.post('http://localhost:4000/newuserdata', formData);
             console.log('Employee details saved successfully');
     
       
@@ -65,7 +65,8 @@ function EmployeeDetail() {
         <div className='employee-dashboard'>
             <Header />
             <div className="employee-login-01">
-                <img className="logo" src="/Images/logo-blitz.png" alt="Logo" />
+                {/* <img className="logo" src="/Images/logo-blitz.png" alt="Logo" /> */}
+                <Image  className="logo" src={homelogo} alt="Logo" />
                 <div className="new-signup" >
 
                     <form className='form-container' onSubmit={handleSubmit}>
