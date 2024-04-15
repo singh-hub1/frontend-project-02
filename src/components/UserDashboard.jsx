@@ -72,7 +72,7 @@ function UserDashboard() {
     }
   };
 
-  const handleTimeOutClick = () => {
+  const handleTimeOutClick = async() => {
     const confirmation = window.confirm("Are you sure you want to Time out?");
     if (confirmation) {
       const storedUser = localStorage.getItem('user');
@@ -100,7 +100,7 @@ function UserDashboard() {
   };
 
 
-  const handleTeaBreakClick = () => {
+  const handleTeaBreakClick = async() => {
     const confirmation = window.confirm("Are you sure you want to Tea Break?");
     if (confirmation) {
       const storedUser = localStorage.getItem('user');
@@ -130,7 +130,7 @@ function UserDashboard() {
   };
 
 
-  const handleSmokingBreakClick = () => {
+  const handleSmokingBreakClick = async() => {
     const confirmation = window.confirm("Are you sure you want to Smoking Break?");
     if (confirmation) {
       const storedUser = localStorage.getItem('user');
