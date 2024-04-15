@@ -42,9 +42,10 @@ function UserDashboard() {
     }
   };
 
-  const handleTimeInClick = async () => {
-    const confirmation = window.confirm("Are you sure you want to Time in?");
-    if (confirmation) {
+const handleTimeInClick = async () => {
+  const confirmation = window.confirm("Are you sure you want to Time in?");
+  if (confirmation) {
+    try {
       const storedUser = localStorage.getItem('user');
       console.log(storedUser);
 
@@ -56,21 +57,23 @@ function UserDashboard() {
 
       const url = `https://backend-project-02-1.onrender.com/timein`;
 
-
-    
       const requestData = {
         employeeCode: employeeCode,
         employeeUsername: employeeUsername
       };
-      const response = axios.post(url, requestData);
+      const response = await axios.post(url, requestData);
       console.log(response.data);
       window.location.reload();
-
-    } else {
-      // Handle "No" option or do nothing
-      // You can add your logic here for "No" option or just leave it blank if no action required
+    } catch (error) {
+      console.error("Error:", error);
+      // Handle errors here
     }
-  };
+  } else {
+    // Handle "No" option or do nothing
+    // You can add your logic here for "No" option or just leave it blank if no action required
+  }
+};
+
 
   const handleTimeOutClick = () => {
     const confirmation = window.confirm("Are you sure you want to Time out?");
