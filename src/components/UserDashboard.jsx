@@ -100,7 +100,7 @@ function UserDashboard() {
   };
 
 
-  const handleTeaBreakClick = async() => {
+  const handleTeaBreakClick = () => {
     const confirmation = window.confirm("Are you sure you want to Tea Break?");
     if (confirmation) {
       const storedUser = localStorage.getItem('user');
