@@ -42,7 +42,7 @@ function UserDashboard() {
     }
   };
 
-  const handleTimeInClick = () => {
+  const handleTimeInClick = async () => {
     const confirmation = window.confirm("Are you sure you want to Time in?");
     if (confirmation) {
       const storedUser = localStorage.getItem('user');
