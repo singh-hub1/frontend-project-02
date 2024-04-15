@@ -75,9 +75,10 @@ const handleTimeInClick = async () => {
 };
 
 
-  const handleTimeOutClick = () => {
-    const confirmation = window.confirm("Are you sure you want to Time out?");
-    if (confirmation) {
+const handleTimeOutClick = async () => {
+  const confirmation = window.confirm("Are you sure you want to Time out?");
+  if (confirmation) {
+    try {
       const storedUser = localStorage.getItem('user');
       console.log(storedUser);
 
@@ -89,23 +90,30 @@ const handleTimeInClick = async () => {
 
       const url = `https://backend-project-02-1.onrender.com/timeout`;
 
-         const requestData = {
+      const requestData = {
         employeeCode: employeeCode,
         employeeUsername: employeeUsername
       };
-      const response = axios.post(url, requestData);
+
+      const response = await axios.post(url, requestData);
       console.log(response.data);
       window.location.reload();
-    } else {
-      // Handle "No" option or do nothing
-      // You can add your logic here for "No" option or just leave it blank if no action required
+    } catch (error) {
+      console.error("Error:", error);
+      // Handle errors here
     }
-  };
+  } else {
+    // Handle "No" option or do nothing
+    // You can add your logic here for "No" option or just leave it blank if no action required
+  }
+};
 
 
-  const handleTeaBreakClick = () => {
-    const confirmation = window.confirm("Are you sure you want to Tea Break?");
-    if (confirmation) {
+
+const handleTeaBreakClick = async () => {
+  const confirmation = window.confirm("Are you sure you want to Tea Break?");
+  if (confirmation) {
+    try {
       const storedUser = localStorage.getItem('user');
       console.log(storedUser);
 
@@ -117,25 +125,30 @@ const handleTimeInClick = async () => {
 
       const url = `https://backend-project-02-1.onrender.com/teabreak`;
 
-
-
       const requestData = {
         employeeCode: employeeCode,
         employeeUsername: employeeUsername
       };
-      const response = axios.post(url, requestData);
+
+      const response = await axios.post(url, requestData);
       console.log(response.data);
       window.location.reload();
-    } else {
-      // Handle "No" option or do nothing
-      // You can add your logic here for "No" option or just leave it blank if no action required
+    } catch (error) {
+      console.error("Error:", error);
+      // Handle errors here
     }
-  };
+  } else {
+    // Handle "No" option or do nothing
+    // You can add your logic here for "No" option or just leave it blank if no action required
+  }
+};
 
 
-  const handleSmokingBreakClick = () => {
-    const confirmation = window.confirm("Are you sure you want to Smoking Break?");
-    if (confirmation) {
+
+const handleSmokingBreakClick = async () => {
+  const confirmation = window.confirm("Are you sure you want to Smoking Break?");
+  if (confirmation) {
+    try {
       const storedUser = localStorage.getItem('user');
       console.log(storedUser);
 
@@ -147,20 +160,25 @@ const handleTimeInClick = async () => {
 
       const url = `https://backend-project-02-1.onrender.com/smokingbreak`;
 
-
       // Prepare data to send to the backend
       const requestData = {
         employeeCode: employeeCode,
         employeeUsername: employeeUsername
       };
-      const response = axios.post(url, requestData);
+
+      const response = await axios.post(url, requestData);
       console.log(response.data);
       window.location.reload();
-    } else {
-      // Handle "No" option or do nothing
-      // You can add your logic here for "No" option or just leave it blank if no action required
+    } catch (error) {
+      console.error("Error:", error);
+      // Handle errors here
     }
+  } else {
+    // Handle "No" option or do nothing
+    // You can add your logic here for "No" option or just leave it blank if no action required
   }
+};
+
   return (
     <>
       <Navbar1 />
